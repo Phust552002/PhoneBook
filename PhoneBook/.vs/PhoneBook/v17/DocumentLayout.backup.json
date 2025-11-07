@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\phonebook.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\phonebook.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\phonebook.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\phonebook.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\wwwroot\\lib\\jquery-validation\\license.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,43 +70,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LICENSE.txt",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
-              "RelativeDocumentMoniker": "PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
-              "RelativeToolTip": "PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-07T09:34:31.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PhoneBook.csproj",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
-              "RelativeDocumentMoniker": "PhoneBook\\PhoneBook.csproj",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
-              "RelativeToolTip": "PhoneBook\\PhoneBook.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-07T03:37:10.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PhoneBook\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "PhoneBook\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-07T09:24:18.087Z",
               "EditorCaption": ""
@@ -106,6 +88,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "PhoneBook\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "PhoneBook\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-07T09:46:50.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "PhoneBook\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "PhoneBook\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-07T09:46:49.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PhoneBook.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+              "RelativeDocumentMoniker": "PhoneBook\\PhoneBook.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+              "RelativeToolTip": "PhoneBook\\PhoneBook.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-07T03:37:10.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LICENSE.txt",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
+              "RelativeDocumentMoniker": "PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
+              "RelativeToolTip": "PhoneBook\\wwwroot\\lib\\jquery\\LICENSE.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-11-07T09:34:31.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "LICENSE.md",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
               "RelativeDocumentMoniker": "PhoneBook\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
@@ -113,12 +143,11 @@
               "RelativeToolTip": "PhoneBook\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-07T09:34:36.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T09:34:36.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "LICENSE.txt",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
               "RelativeDocumentMoniker": "PhoneBook\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
@@ -126,12 +155,11 @@
               "RelativeToolTip": "PhoneBook\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-07T09:34:39.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T09:34:39.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Program.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Program.cs",
@@ -139,25 +167,24 @@
               "RelativeToolTip": "PhoneBook\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAADoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T09:27:48.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T09:27:48.166Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "PhoneBook\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "PhoneBook\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAALwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAALwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-07T04:06:25.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\appsettings.json",
               "RelativeDocumentMoniker": "PhoneBook\\appsettings.json",
@@ -165,12 +192,11 @@
               "RelativeToolTip": "PhoneBook\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-07T04:36:18.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T04:36:18.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Controllers\\HomeController.cs",
@@ -178,12 +204,11 @@
               "RelativeToolTip": "PhoneBook\\Controllers\\HomeController.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAASwDkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:34:11.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T03:34:11.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PhoneBook.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\PhoneBook.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Models\\PhoneBook.cs",
@@ -191,12 +216,11 @@
               "RelativeToolTip": "PhoneBook\\Models\\PhoneBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T06:13:58.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T06:13:58.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "HRMDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Data\\HRMDbContext.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Data\\HRMDbContext.cs",
@@ -204,12 +228,11 @@
               "RelativeToolTip": "PhoneBook\\Data\\HRMDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T05:07:40.458Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T05:07:40.458Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "bundleconfig.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\bundleconfig.json",
               "RelativeDocumentMoniker": "PhoneBook\\bundleconfig.json",
@@ -217,12 +240,11 @@
               "RelativeToolTip": "PhoneBook\\bundleconfig.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-07T05:07:57.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T05:07:57.57Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "PhoneBook\\Properties\\launchSettings.json",
@@ -230,8 +252,7 @@
               "RelativeToolTip": "PhoneBook\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-07T04:32:22.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T04:32:22.148Z"
             }
           ]
         }

@@ -427,3 +427,4 @@ C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\r
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Telerik.Documents.Core.dll
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Telerik.Zip.dll
+C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\obj\Debug\net8.0\PhoneBook.sourcelink.json
