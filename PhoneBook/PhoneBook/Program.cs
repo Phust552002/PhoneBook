@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using PhoneBook.Models;
+using PhoneBook.Services;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,12 +25,31 @@ builder.Services.AddDbContext<HRMDbContext>(options =>
 
 // Authentication (cookie)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => {
+    .AddCookie(options =>
+    {
         options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+        options.SlidingExpiration = true;
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.Cookie.SameSite = SameSiteMode.Lax;
     });
+builder.Services.AddAuthorization();
+
+// Cấu hình Session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(5);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 
 // Register repositories/services
 builder.Services.AddScoped<IPhoneBookRepository, PhoneBookRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 //builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 
@@ -60,6 +80,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

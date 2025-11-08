@@ -1,0 +1,510 @@
+﻿@model PhoneBook.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            /* Background với overlay */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('/images/backgroundSags.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -2;
+            }
+
+            /* Overlay tối để text dễ đọc */
+            body::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.2); /* đen mờ 20% */
+                z-index: -1;
+            }
+
+            /* Fallback nếu không có background image */
+            body.no-background::before {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+            max-width: 450px;
+            width: 100%;
+            animation: slideIn 0.5s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @@keyframes slideIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .login-header::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                animation: rotate 20s linear infinite;
+            }
+
+        @@keyframes rotate {
+            from
+
+        {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+
+        }
+
+        .login-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo công ty */
+        .company-logo {
+            width: 120px;
+            height: auto;
+            max-height: 80px;
+            margin: 0 auto 20px;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+            object-fit: contain;
+        }
+
+        /* Fallback icon nếu không có logo */
+        .login-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(10px);
+        }
+
+            .login-icon i {
+                font-size: 40px;
+                color: white;
+            }
+
+        .login-header h2 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .login-header p {
+            margin: 10px 0 0;
+            opacity: 0.95;
+            font-size: 15px;
+        }
+
+        .login-body {
+            padding: 40px 35px;
+            background: white;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 14px;
+            display: block;
+        }
+
+        .input-group-custom {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+
+        .form-control {
+            border-radius: 10px;
+            padding: 14px 15px;
+            border: 2px solid #e0e0e0;
+            font-size: 15px;
+            transition: all 0.3s;
+            width: 100%;
+            background: white;
+        }
+
+            .form-control:focus {
+                border-color: #667eea;
+                box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+                outline: none;
+            }
+
+            .form-control:hover {
+                border-color: #764ba2;
+            }
+
+        .password-input-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+            font-size: 18px;
+            z-index: 2;
+            transition: color 0.3s;
+            line-height: 1; /* đảm bảo không bị lệch theo font */
+            height: 100%; /* để căn chuẩn theo chiều cao input */
+            display: flex;
+            align-items: center;
+        }
+
+
+            .password-toggle:hover {
+                color: #667eea;
+            }
+
+        .form-check {
+            margin: 20px 0;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+        }
+
+            .form-check-input:checked {
+                background-color: #667eea;
+                border-color: #667eea;
+            }
+
+        .form-check-label {
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            font-weight: 700;
+            width: 100%;
+            margin-top: 10px;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .btn-login::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                transition: left 0.5s;
+            }
+
+            .btn-login:hover::before {
+                left: 100%;
+            }
+
+            .btn-login:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            }
+
+            .btn-login:active {
+                transform: translateY(-1px);
+            }
+
+        .alert {
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: none;
+            font-size: 14px;
+        }
+
+        .alert-danger {
+            background-color: #fee;
+            color: #c33;
+        }
+
+        .alert ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .validation-summary-errors ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .validation-summary-errors li {
+            padding: 8px 0;
+        }
+
+        .text-danger {
+            font-size: 13px;
+            margin-top: 5px;
+            display: block;
+            color: #dc3545;
+        }
+
+        /* Loading animation */
+        .btn-login.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+            .btn-login.loading::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                left: 50%;
+                margin-left: -10px;
+                margin-top: -10px;
+                border: 3px solid rgba(255,255,255,0.3);
+                border-top-color: white;
+                border-radius: 50%;
+                animation: spin 0.8s linear infinite;
+            }
+
+        @@keyframes spin {
+            to
+
+        {
+            transform: rotate(360deg);
+        }
+
+        }
+
+        /* Company branding footer */
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @@media (max-width: 576px) {
+            .login-container
+
+        {
+            margin: 10px;
+        }
+
+        .login-header {
+            padding: 30px 20px;
+        }
+
+        .login-body {
+            padding: 30px 25px;
+        }
+
+        .login-header h2 {
+            font-size: 24px;
+        }
+
+        .company-logo {
+            width: 100px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-header-content">
+                <!-- Logo công ty - ưu tiên hiển thị -->
+                <img src="~/images/logoSags.png" alt="Company Logo" class="company-logo" id="companyLogo"
+                     onerror="this.style.display='none'; document.getElementById('fallbackIcon').style.display='flex';" />
+
+                <!-- Icon fallback nếu không có logo -->
+                <div class="login-icon" id="fallbackIcon" style="display: none;">
+                    <i class="fas fa-address-book"></i>
+                </div>
+
+                <h2>Đăng nhập</h2>
+                <p>PhoneBook</p>
+            </div>
+        </div>
+
+        <div class="login-body">
+            <form asp-action="Login" asp-controller="Account" method="post" id="loginForm">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="input-group-custom">
+                    <label asp-for="Username" class="form-label">
+                        <i class="fas fa-user"></i> Tên đăng nhập
+                    </label>
+                    <input asp-for="Username" class="form-control" placeholder="Nhập tên đăng nhập" autocomplete="username" autofocus />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="input-group-custom">
+                    <label asp-for="Password" class="form-label">
+                        <i class="fas fa-lock"></i> Mật khẩu
+                    </label>
+                    <div class="password-input-wrapper">
+                        <input asp-for="Password" class="form-control" type="password" id="passwordInput" placeholder="Nhập mật khẩu" autocomplete="current-password" />
+                        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label">
+                        Ghi nhớ đăng nhập
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-login" id="btnLogin">
+                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                </button>
+            </form>
+        </div>
+
+        <div class="login-footer">
+            <p class="mb-0">© 2025 - Hệ thống quản lý danh bạ nội bộ</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        // Kiểm tra background image có tồn tại không
+        const img = new Image();
+        img.src = '/images/backgroundSags.jpg';
+        img.onerror = function() {
+            document.body.classList.add('no-background');
+        };
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('passwordInput');
+            const icon = this;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Loading animation on submit
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            const btn = document.getElementById('btnLogin');
+            btn.classList.add('loading');
+            btn.innerHTML = '';
+        });
+
+        // Auto focus on error
+        window.addEventListener('load', function() {
+            const errorInput = document.querySelector('.input-validation-error');
+            if (errorInput) {
+                errorInput.focus();
+            }
+        });
+    </script>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

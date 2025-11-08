@@ -2,16 +2,9 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
 using System;
-using System.Diagnostics; // ⚠️ thêm để dùng Debug.WriteLine
+using System.Diagnostics;
 using PhoneBook.Models;
 using Microsoft.Extensions.Configuration;
-
-public interface IPhoneBookRepository
-{
-    Task<List<Department>> GetDepartmentsAsync();
-    Task<List<Employee>> GetEmployeesByDepartmentAsync(int departmentId);
-    Task<List<Employee>> GetAllEmployeesAsync();
-}
 
 public class PhoneBookRepository : IPhoneBookRepository
 {
@@ -34,11 +27,9 @@ public class PhoneBookRepository : IPhoneBookRepository
             ORDER BY ParentId, DepartmentName";
 
         using var conn = CreateConnection();
-
-        Debug.WriteLine("📡 [GetDepartmentsAsync] Đang thực thi truy vấn SQL...");
+        Debug.WriteLine("[GetDepartmentsAsync] Đang thực thi truy vấn SQL...");
         var all = (await conn.QueryAsync<Department>(sql)).ToList();
-
-        Debug.WriteLine($"✅ Đã lấy {all.Count} phòng ban từ DB.");
+        Debug.WriteLine($"Đã lấy {all.Count} phòng ban từ DB.");
 
         if (!all.Any())
         {
@@ -52,13 +43,12 @@ public class PhoneBookRepository : IPhoneBookRepository
             if (dept.ParentId != -1 && lookup.ContainsKey(dept.ParentId))
             {
                 lookup[dept.ParentId].Children.Add(dept);
-                Debug.WriteLine($"🌿 Gắn {dept.DepartmentName} vào cha {lookup[dept.ParentId].DepartmentName}");
+                Debug.WriteLine($"✓ Gắn {dept.DepartmentName} vào cha {lookup[dept.ParentId].DepartmentName}");
             }
         }
 
         var roots = all.Where(d => d.ParentId == -1).ToList();
-        Debug.WriteLine($"🌳 Có {roots.Count} phòng ban gốc được tạo cây.");
-
+        Debug.WriteLine($"Có {roots.Count} phòng ban gốc được tạo cây.");
         return roots;
     }
 
@@ -86,8 +76,7 @@ public class PhoneBookRepository : IPhoneBookRepository
 
         using var conn = CreateConnection();
         var result = (await conn.QueryAsync<Employee>(sql, new { departmentId })).ToList();
-
-        Debug.WriteLine($"✅ Đã lấy {result.Count} nhân viên (bao gồm cả phòng con) của phòng ban {departmentId}.");
+        Debug.WriteLine($"✓ Đã lấy {result.Count} nhân viên (bao gồm cả phòng con) của phòng ban {departmentId}.");
         return result;
     }
 
@@ -104,5 +93,65 @@ public class PhoneBookRepository : IPhoneBookRepository
         using var connection = CreateConnection();
         var employees = await connection.QueryAsync<Employee>(sql);
         return employees.ToList();
+    }
+
+    // 🔹 Lấy thông tin nhân viên theo username (cho đăng nhập)
+    public async Task<Employee> GetEmployeeByUsernameAsync(string username)
+    {
+        const string sql = @"
+            SELECT 
+                e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
+                e.Password, e.PositionName,
+                e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status,
+                de.DepartmentId
+            FROM Employees e
+            LEFT JOIN H0_DepartmentEmployee de ON e.UserId = de.UserId
+            WHERE e.UserName = @Username AND e.Status > 0";
+
+        using var conn = CreateConnection();
+        Debug.WriteLine($"[GetEmployeeByUsernameAsync] Đang tìm user: {username}");
+
+        var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { Username = username });
+
+        if (employee != null)
+        {
+            Debug.WriteLine($"✓ Tìm thấy user: {employee.FullName} (UserId: {employee.UserId})");
+        }
+        else
+        {
+            Debug.WriteLine($"⚠️ Không tìm thấy user: {username}");
+        }
+
+        return employee;
+    }
+
+    // 🔹 Lấy thông tin nhân viên theo UserId
+    public async Task<Employee> GetEmployeeByIdAsync(int userId)
+    {
+        const string sql = @"
+            SELECT 
+                e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
+                e.PositionName,
+                e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status,
+                de.DepartmentId
+            FROM Employees e
+            LEFT JOIN H0_DepartmentEmployee de ON e.UserId = de.UserId
+            WHERE e.UserId = @UserId AND e.Status > 0";
+
+        using var conn = CreateConnection();
+        Debug.WriteLine($"[GetEmployeeByIdAsync] Đang tìm user với ID: {userId}");
+
+        var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { UserId = userId });
+
+        if (employee != null)
+        {
+            Debug.WriteLine($"✓ Tìm thấy user: {employee.FullName}");
+        }
+        else
+        {
+            Debug.WriteLine($"⚠️ Không tìm thấy user với ID: {userId}");
+        }
+
+        return employee;
     }
 }
