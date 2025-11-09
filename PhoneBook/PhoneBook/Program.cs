@@ -74,8 +74,11 @@ app.Use(async (context, next) =>
     await next.Invoke();
 });
 app.UseHttpsRedirection();
-app.UseStaticFiles();
-
+app.UseStaticFiles(new StaticFileOptions
+{
+    ServeUnknownFileTypes = true,
+    DefaultContentType = "application/octet-stream"
+});
 app.UseRouting();
 
 app.UseAuthentication();

@@ -1,21 +1,24 @@
 ﻿@model List<PhoneBook.Models.Department>
 @using Kendo.Mvc
 
-@{ ViewData ["Title"]="PhoneBook";}
+@{
+    ViewData["Title"] = "PhoneBook";
+}
 
+<meta charset="utf-8" />
 
 <style>
-    /* Reset font size - make everything smaller */
+    /* ====== BASE ====== */
     body {
         font-size: 13px;
     }
 
     .phonebook-container {
         padding: 10px 0;
-        height: calc(100vh - 80px); /* Adjust based on your navbar height */
+        height: calc(100vh - 80px);
         overflow: hidden;
     }
-    
+
     .section-card {
         background: #fff;
         border-radius: 6px;
@@ -25,7 +28,7 @@
         display: flex;
         flex-direction: column;
     }
-    
+
     .section-header {
         display: flex;
         align-items: center;
@@ -34,14 +37,15 @@
         border-bottom: 2px solid #e9ecef;
         flex-shrink: 0;
     }
-    
-    .section-header h3 {
-        margin: 0;
-        color: #2c3e50;
-        font-weight: 600;
-        font-size: 15px;
-    }
-    
+
+        .section-header h3 {
+            margin: 0;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+    /* ====== TREE CONTROLS ====== */
     .tree-controls {
         background: #f8f9fa;
         border: 1px solid #dee2e6;
@@ -50,23 +54,24 @@
         margin-bottom: 10px;
         flex-shrink: 0;
     }
-    
-    .tree-controls .control-group {
-        margin-bottom: 6px;
-    }
-    
-    .tree-controls .control-group:last-child {
-        margin-bottom: 0;
-    }
-    
-    .tree-controls label {
-        font-size: 11px;
-        font-weight: 600;
-        color: #495057;
-        margin-bottom: 3px;
-        display: block;
-    }
-    
+
+        .tree-controls .control-group {
+            margin-bottom: 6px;
+        }
+
+            .tree-controls .control-group:last-child {
+                margin-bottom: 0;
+            }
+
+        .tree-controls label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+    /* ====== SEARCH BOX ====== */
     .search-box {
         background: #f8f9fa;
         border: 1px solid #dee2e6;
@@ -76,22 +81,19 @@
         flex-shrink: 0;
     }
 
-    .search-box label {
-        font-size: 11px;
-        font-weight: 600;
-        margin-bottom: 3px;
-    }
-    
-    .search-box input {
-        border-radius: 3px;
-        font-size: 12px;
-        padding: 4px 8px;
-    }
+        .search-box label {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
 
-    .search-box small {
-        font-size: 10px;
-    }
-    
+        .search-box input {
+            border-radius: 3px;
+            font-size: 12px;
+            padding: 4px 8px;
+        }
+
+    /* ====== EMPLOYEE COUNT ====== */
     .employee-count {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -104,7 +106,8 @@
         box-shadow: 0 1px 4px rgba(102, 126, 234, 0.3);
         flex-shrink: 0;
     }
-    
+
+    /* ====== TREE & GRID ====== */
     .tree-wrapper {
         flex: 1;
         overflow-y: auto;
@@ -120,20 +123,21 @@
         display: flex;
         flex-direction: column;
     }
-    
+
     #deptTree {
         font-size: 12px;
     }
 
-    #deptTree .k-in {
-        padding: 4px 6px;
-    }
-    
+        #deptTree .k-in {
+            padding: 4px 6px;
+        }
+
     .k-grid {
         border-radius: 4px;
         overflow: hidden;
         font-size: 12px;
         flex: 1;
+        font-family: "DejaVu Sans", "Arial", sans-serif;
     }
 
     .k-grid-header th {
@@ -150,87 +154,120 @@
         font-size: 11px;
         padding: 4px 8px;
     }
-    
+
     .row-number {
         font-weight: 600;
         color: #6c757d;
     }
 
-    .btn-sm {
-        font-size: 11px;
-        padding: 3px 8px;
+    /* ====== EXPORT PDF STYLE ====== */
+    .k-pdf-export {
+        font-family: 'Roboto', 'DejaVu Sans', 'Arial', sans-serif !important;
     }
 
-    .input-group-sm .form-control,
-    .input-group-sm .btn {
-        font-size: 11px;
-        padding: 3px 8px;
+        .k-pdf-export .k-grid-toolbar,
+        .k-pdf-export .k-filter-row,
+        .k-pdf-export .k-pager {
+            display: none !important;
+        }
+
+    /* ====== PDF TEMPLATE ====== */
+    .page-template {
+        font-family: "Arial", sans-serif;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
     }
 
-    /* Make Kendo Grid fit perfectly */
+        .page-template .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            border-bottom: 1px solid #888;
+            color: #888;
+        }
+
+        .page-template .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border-top: 1px solid #888;
+            text-align: center;
+            color: #888;
+        }
+
+        .page-template .watermark {
+            font-weight: bold;
+            font-size: 400%;
+            text-align: center;
+            margin-top: 30%;
+            color: #aaa;
+            opacity: 0.1;
+            transform: rotate(-35deg) scale(1.7, 1.5);
+        }
+
     .k-grid .k-grid-content {
         overflow-y: auto !important;
     }
 
     @@media (max-width: 768px) {
-        .phonebook-container {
-            height: auto;
-            overflow: auto;
-        }
-        .section-card {
-            margin-bottom: 15px;
-            height: auto;
-        }
+        .phonebook-container
+
+    {
+        height: auto;
+        overflow: auto;
+    }
+
+    .section-card {
+        margin-bottom: 15px;
+        height: auto;
+    }
+
     }
 </style>
 
+<!-- ===================== MAIN UI ===================== -->
 <div class="phonebook-container">
     <div class="row h-100">
+
         <!-- CỘT TRÁI: Cây Phòng Ban -->
         <div class="col-lg-3 col-md-4 h-100">
             <div class="section-card">
                 <div class="section-header">
-                    <h3>
-                        <i class="fas fa-sitemap me-2"></i>Phòng Ban
-                    </h3>
+                    <h3><i class="fas fa-sitemap me-2"></i>Phòng Ban</h3>
                 </div>
 
                 <div class="tree-controls">
-                    <div class="control-group">
-                        <div class="btn-group w-100" role="group">
-                            <button id="expandAllNodes" class="btn btn-sm btn-outline-primary">
-                                <i class="fas fa-plus-circle me-1"></i>Mở rộng
-                            </button>
-                            <button id="collapseAllNodes" class="btn btn-sm btn-outline-secondary">
-                                <i class="fas fa-minus-circle me-1"></i>Thu nhỏ
-                            </button>
-                        </div>
+                    <div class="btn-group w-100 mb-2">
+                        <button id="expandAllNodes" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-plus-circle me-1"></i>Mở rộng
+                        </button>
+                        <button id="collapseAllNodes" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-minus-circle me-1"></i>Thu nhỏ
+                        </button>
                     </div>
-                    
-                    <div class="control-group">
-                        <div class="input-group input-group-sm">
-                            <input id="filterText" 
-                                   class="form-control" 
-                                   placeholder="Nhập tìm tên phòng ban..." />
 
-                        </div>
-                    </div>
+                    <input id="filterText" class="form-control form-control-sm" placeholder="Nhập tên phòng ban..." />
                 </div>
 
                 <div class="tree-wrapper">
                     @(Html.Kendo().TreeView()
-                        .Name("deptTree")
-                        .DataTextField("text")
-                        .DataSource(ds => ds
-                            .Read(r => r.Url(Url.Action("GetDepartments", "Home")))
-                            .Model(m =>
-                            {
-                                m.Id("id");
-                                m.Children("items");
-                            })
-                        )
-                        .Events(e => e.Select("onDeptSelect"))
-                    )
+                                        .Name("deptTree")
+                                        .DataTextField("text")
+                                        .DataSource(ds => ds
+                                        .Read(r => r.Url(Url.Action("GetDepartments", "Home")))
+                                        .Model(m =>
+                                        {
+                                            m.Id("id");
+                                            m.Children("items");
+                                        })
+                                        )
+                                        .Events(e => e.Select("onDeptSelect"))
+                                        )
                 </div>
             </div>
         </div>
@@ -239,246 +276,174 @@
         <div class="col-lg-9 col-md-7 h-100">
             <div class="section-card">
                 <div class="section-header">
-                    <h3>
-                        <i class="fas fa-users me-2"></i>Danh Sách Nhân Viên
-                    </h3>
+                    <h3><i class="fas fa-users me-2"></i>Danh Sách Nhân Viên</h3>
                 </div>
 
-                <!-- Thanh Tìm Kiếm Nhân Viên -->
                 <div class="search-box">
-                    <label class="form-label mb-1">
-                        <i class="fas fa-search me-1"></i>Tìm kiếm
-                    </label>
-                    <div class="input-group input-group-sm">
-                        <input type="text" 
-                               id="employeeSearch" 
-                               class="form-control" 
-                               placeholder="Tìm theo tên, số điện thoại..." />
-                    </div>
+                    <label class="form-label mb-1"><i class="fas fa-search me-1"></i>Tìm kiếm</label>
+                    <input type="text" id="employeeSearch" class="form-control form-control-sm"
+                           placeholder="Tìm theo tên, số điện thoại..." />
                 </div>
 
                 <div class="grid-wrapper">
                     @(Html.Kendo().Grid<PhoneBook.Models.Employee>()
-                        .Name("employeeGrid")
-                        .Columns(columns =>
-                        {
-                            columns.Template("<span class='row-number'></span>")
-                                .Title("STT")
-                                .Width(50)
-                                .HtmlAttributes(new { @class = "text-center" });
-
-                            columns.Bound(e => e.FullName)
-                                .Title("Họ và Tên")
-                                .Width(180);
-                            
-                            columns.Bound(e => e.WorkingPhone)
-                                .Title("ĐT Công Việc")
-                                .Width(120)
-                                .HtmlAttributes(new { @class = "text-center" });
-                            
-                            columns.Bound(e => e.HandPhone)
-                                .Title("Di Động")
-                                .Width(120)
-                                .HtmlAttributes(new { @class = "text-center" });
-                            
-                            columns.Bound(e => e.HomePhone)
-                                .Title("ĐT Nhà")
-                                .Width(120)
-                                .HtmlAttributes(new { @class = "text-center" });
-                        })
-                        .Sortable()
-                        .Filterable(f => f
-                            .Mode(GridFilterMode.Row)
-                        )
-                        .Pageable(page => page
-                            .PageSizes(new int[] { 15, 30, 50, 100 })
-                            .ButtonCount(5)
-                        )
-                        .DataSource(ds => ds
-                            .Ajax()
-                            .ServerOperation(false)
-                            .PageSize(10)
-                            .Read(read => read.Url(Url.Action("GetAllEmployees", "Home")))
-                            .Model(m =>
-                            {
-                                m.Id(e => e.UserId);
-                            })
-                        )
-                        .Scrollable()
-                        .Events(e => e.DataBound("onGridDataBound"))
-                    )
+                                        .Name("employeeGrid")
+                                        .ToolBar(tools => { tools.Pdf(); tools.Excel(); })
+                                        .Excel(excel => excel.FileName("PhoneBook_Export.xlsx").AllPages(true))
+                                        .Pdf(pdf => pdf
+                                        .AllPages()
+                                        .AvoidLinks()
+                                        .PaperSize("A4")
+                                        .Scale(0.8)
+                                        .Margin("2cm", "1cm", "1cm", "1cm")
+                                        .Landscape()
+                                        .TemplateId("page-template")
+                                        .FileName("PhoneBook_Export.pdf")
+                                        .ProxyURL(Url.Action("Pdf_Export_Save", "Grid"))
+                                        )
+                                        .Columns(columns =>
+                                        {
+                                            columns.Template("<span class='row-number'></span>").Title("STT").Width(50).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.FullName).Title("Họ và Tên").Width(180);
+                                            columns.Bound(e => e.WorkingPhone).Title("ĐT Công Việc").Width(120).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.HandPhone).Title("Di Động").Width(120).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.HomePhone).Title("ĐT Nhà").Width(120).HtmlAttributes(new { @class = "text-center" });
+                                        })
+                                        .Sortable()
+                                        .Filterable(f => f.Mode(GridFilterMode.Row))
+                                        .Pageable(page => page.PageSizes(new int[] { 15, 30, 50, 100 }).ButtonCount(5))
+                                        .DataSource(ds => ds
+                                        .Ajax()
+                                        .ServerOperation(false)
+                                        .PageSize(10)
+                                        .Read(read => read.Url(Url.Action("GetAllEmployees", "Home")))
+                                        .Model(m => m.Id(e => e.UserId))
+                                        )
+                                        .Scrollable()
+                                        .Events(e => e.DataBound("onGridDataBound"))
+                                        )
                 </div>
-                
+
                 <div id="empCount" class="employee-count">
-                    <i class="fas fa-user-check me-2"></i>
-                    <span>Đang tải dữ liệu...</span>
+                    <i class="fas fa-user-check me-2"></i><span>Đang tải dữ liệu...</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- ===================== SCRIPTS ===================== -->
 @section Scripts {
+    <script type="x/kendo-template" id="page-template">
+        <div class="page-template">
+            <div class="header">
+                <div style="float:right">Page #: pageNum # of #: totalPages #</div>
+                PhoneBook
+            </div>
+            <div class="watermark">SAGS</div>
+            <div class="footer">Page #: pageNum # of #: totalPages #</div>
+        </div>
+    </script>
+
     <script>
-        // ✅ Load tất cả nhân viên khi trang load
-        $(document).ready(function() {
+        $(document).ready(function () {
+            kendo.pdf.defineFont({
+                "Roboto": "https://localhost:44364/fonts/Roboto/static/Roboto-Regular.ttf",
+                "Roboto|Bold": "https://localhost:44364/fonts/Roboto/static/Roboto-Bold.ttf",
+                "Roboto|Italic": "https://localhost:44364/fonts/Roboto/static/Roboto-Italic.ttf",
+                "Roboto|Bold|Italic": "https://localhost:44364/fonts/Roboto/static/Roboto-BoldItalic.ttf"
+            });
+
             const grid = $("#employeeGrid").data("kendoGrid");
-            
-            // Wait for grid to be ready then load data
-            if (grid) {
-                grid.dataSource.read();
-            }
+            if (grid) grid.dataSource.read();
 
-            // ✅ Tìm kiếm nhân viên (search across all columns)
-            $("#employeeSearch").on("input", function() {
-                const searchValue = $(this).val().toLowerCase();
-                
-                if (!searchValue) {
-                    grid.dataSource.filter({});
-                    return;
-                }
-
-                // Tìm kiếm trên tất cả các cột
-                grid.dataSource.filter({
+            $("#employeeSearch").on("input", function () {
+                const val = $(this).val().toLowerCase();
+                grid.dataSource.filter(!val ? {} : {
                     logic: "or",
                     filters: [
-                        { field: "FullName", operator: "contains", value: searchValue },
-                        { field: "WorkingPhone", operator: "contains", value: searchValue },
-                        { field: "HandPhone", operator: "contains", value: searchValue },
-                        { field: "HomePhone", operator: "contains", value: searchValue }
+                        { field: "FullName", operator: "contains", value: val },
+                        { field: "WorkingPhone", operator: "contains", value: val },
+                        { field: "HandPhone", operator: "contains", value: val },
+                        { field: "HomePhone", operator: "contains", value: val }
                     ]
                 });
             });
 
-            // Nút xóa tìm kiếm
-            $("#clearSearch").on("click", function() {
-                $("#employeeSearch").val("");
-                grid.dataSource.filter({});
-            });
-
-            // Adjust grid height dynamically
             adjustGridHeight();
-            $(window).on('resize', adjustGridHeight);
+            $(window).on("resize", adjustGridHeight);
         });
 
         function adjustGridHeight() {
-            const gridWrapper = $('.grid-wrapper');
-            const availableHeight = gridWrapper.height();
+            const gridWrapper = $(".grid-wrapper");
             const grid = $("#employeeGrid").data("kendoGrid");
-            
-            if (grid) {
-                const gridElement = grid.wrapper;
-                const gridHeader = gridElement.find('.k-grid-header');
-                const gridPager = gridElement.find('.k-grid-pager');
-                const contentHeight = availableHeight - gridHeader.outerHeight() - gridPager.outerHeight() - 10;
-                
-                gridElement.find('.k-grid-content').height(contentHeight);
-            }
+            if (!grid) return;
+
+            const h = gridWrapper.height();
+            const g = grid.wrapper;
+            const header = g.find(".k-grid-header").outerHeight();
+            const pager = g.find(".k-grid-pager").outerHeight();
+            g.find(".k-grid-content").height(h - header - pager - 10);
         }
 
-        // ✅ Hàm DataBound để đánh số thứ tự cho Grid
         function onGridDataBound(e) {
-            var grid = this;
-            var rows = grid.items();
-            var page = grid.dataSource.page();
-            var pageSize = grid.dataSource.pageSize();
-            var index = (page - 1) * pageSize;
-
+            const grid = this;
+            const rows = grid.items();
+            let index = (grid.dataSource.page() - 1) * grid.dataSource.pageSize();
             rows.each(function () {
-                var row = $(this);
-                var numberCell = row.find(".row-number");
-                numberCell.text(++index);
+                $(this).find(".row-number").text(++index);
             });
-
             updateEmployeeCount(grid.dataSource.total());
             adjustGridHeight();
         }
 
-        // ✅ Cập nhật số lượng nhân viên
         function updateEmployeeCount(count) {
-            $("#empCount").html(`
-                <i class="fas fa-user-check me-2"></i>
-                Tổng số nhân viên: <strong>${count}</strong>
-            `);
+            $("#empCount").html(`<i class="fas fa-user-check me-2"></i>Tổng số nhân viên: <strong>${count}</strong>`);
         }
 
-        // Hàm Select cho TreeView
         async function onDeptSelect(e) {
             const tree = $("#deptTree").data("kendoTreeView");
             const node = tree.dataItem(e.node);
-            const isRoot = (node && (node.parentId === -1 || node.parentId === "-1"));
             const grid = $("#employeeGrid").data("kendoGrid");
-
-            // Xóa filter search khi chọn phòng ban mới
             $("#employeeSearch").val("");
 
-            let url = isRoot
+            const url = (node.parentId === -1 || node.parentId === "-1")
                 ? "/Home/GetAllEmployees"
                 : `/Home/GetEmployeesByDepartment?departmentId=${node.id}`;
 
             try {
                 const res = await fetch(url);
                 const data = await res.json();
-
                 grid.dataSource.data(data);
                 updateEmployeeCount(data.length);
-            } catch (err) {
-                console.error(err);
-                $("#empCount").html(`
-                    <i class="fas fa-exclamation-triangle me-2"></i>
-                    Lỗi tải dữ liệu nhân viên!
-                `);
+            } catch {
+                $("#empCount").html(`<i class="fas fa-exclamation-triangle me-2"></i>Lỗi tải dữ liệu!`);
             }
         }
 
-        // Các hàm tiện ích cho TreeView
-        (function () {
-            function whenTreeReady(callback, tries = 30, interval = 200) {
-                const id = setInterval(() => {
-                    const tree = $("#deptTree").data("kendoTreeView");
-                    if (tree) {
-                        clearInterval(id);
-                        callback(tree);
-                    } else if (--tries <= 0) {
-                        clearInterval(id);
-                        console.warn("TreeView not initialized after waiting.");
+        (function initTreeControls() {
+            function whenTreeReady(cb, tries = 30) {
+                const i = setInterval(() => {
+                    const t = $("#deptTree").data("kendoTreeView");
+                    if (t || --tries <= 0) {
+                        clearInterval(i);
+                        if (t) cb(t);
                     }
-                }, interval);
+                }, 200);
             }
 
-            function expandAll(treeview) {
-                treeview.items().each(function () { treeview.expand(this); });
-            }
-            
-            function collapseAll(treeview) {
-                treeview.items().each(function () { treeview.collapse(this); });
-            }
-            
-            function applyFilter(treeview, text) {
-                if (!text) { 
-                    treeview.dataSource.filter({}); 
-                    return; 
-                }
-                treeview.dataSource.filter({ 
-                    field: "text", 
-                    operator: "contains", 
-                    value: text 
-                });
-                setTimeout(() => expandAll(treeview), 120);
+            function expandAll(t) { t.items().each(function () { t.expand(this); }); }
+            function collapseAll(t) { t.items().each(function () { t.collapse(this); }); }
+            function applyFilter(t, text) {
+                if (!text) return t.dataSource.filter({});
+                t.dataSource.filter({ field: "text", operator: "contains", value: text });
+                setTimeout(() => expandAll(t), 120);
             }
 
-            whenTreeReady(function (treeview) {
-                $("#expandAllNodes").on("click", () => expandAll(treeview));
-                $("#collapseAllNodes").on("click", () => collapseAll(treeview));
-                $("#filterDataSource").on("click", () => applyFilter(treeview, $("#filterText").val()));
-                $("#filterText").on("input", () => applyFilter(treeview, $("#filterText").val()));
-                
-                // Enter key support
-                $("#filterText").on("keypress", function(e) {
-                    if (e.which === 13) {
-                        applyFilter(treeview, $(this).val());
-                    }
-                });
+            whenTreeReady(t => {
+                $("#expandAllNodes").on("click", () => expandAll(t));
+                $("#collapseAllNodes").on("click", () => collapseAll(t));
+                $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
             });
         })();
     </script>
