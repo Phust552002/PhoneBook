@@ -1,7 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhoneBook.Models;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 
 namespace PhoneBook.Controllers
 {
@@ -31,24 +40,21 @@ namespace PhoneBook.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEmployees(int departmentId)
         {
-            //if (departmentId <= 0)
-            //    return Json(Array.Empty<Employee>());
-
             var employees = await _repo.GetEmployeesByDepartmentAsync(departmentId);
             return Json(employees);
         }
+
         [HttpGet]
         public async Task<IActionResult> GetDepartments()
         {
             var departments = await _repo.GetDepartmentsAsync();
 
-            // Chuẩn hóa dữ liệu cho Kendo TreeView
             var tree = departments.Select(d => new
             {
                 id = d.DepartmentId,
                 text = d.DepartmentName,
-                parentId = d.ParentId,        // ✳️ thêm parentId
-                expanded = false, // hiển thị sẵn
+                parentId = d.ParentId,
+                expanded = false,
                 items = BuildTree(d.Children)
             });
 
@@ -69,12 +75,14 @@ namespace PhoneBook.Controllers
                 items = BuildTree(c.Children)
             }).ToList<object>();
         }
+
         [HttpGet]
         public async Task<IActionResult> GetEmployeesByDepartment(int departmentId)
         {
             var result = await _repo.GetEmployeesByDepartmentAsync(departmentId);
             return Json(result);
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAllEmployees()
         {
@@ -89,6 +97,14 @@ namespace PhoneBook.Controllers
                 return StatusCode(500, "Lỗi khi lấy danh sách nhân viên.");
             }
         }
+        public IActionResult SetLanguage(string culture, string returnUrl = "/")
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+            return LocalRedirect(returnUrl);
+        }
     }
-
 }

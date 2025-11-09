@@ -8,7 +8,7 @@ namespace PhoneBook.Models
         public string DepartmentName { get; set; } = string.Empty;
         public int ParentId { get; set; }
         public int Level { get; set; }
-        public string? RootName { get; set; }
+        public string RootName { get; set; }
         public int Status { get; set; }
 
         // Dùng để dựng cây

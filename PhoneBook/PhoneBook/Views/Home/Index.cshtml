@@ -1,450 +1,466 @@
 ﻿@model List<PhoneBook.Models.Department>
-@using Kendo.Mvc
-
-@{
-    ViewData["Title"] = "PhoneBook";
-}
-
-<meta charset="utf-8" />
-
-<style>
-    /* ====== BASE ====== */
-    body {
-        font-size: 13px;
+    @using Kendo.Mvc
+    @{
+        ViewData["Title"] = "PhoneBook";
     }
 
-    .phonebook-container {
-        padding: 10px 0;
-        height: calc(100vh - 80px);
-        overflow: hidden;
-    }
+    @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
-    .section-card {
-        background: #fff;
-        border-radius: 6px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-        padding: 12px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
+    <meta charset="utf-8" />
 
-    .section-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #e9ecef;
-        flex-shrink: 0;
-    }
-
-        .section-header h3 {
-            margin: 0;
-            color: #2c3e50;
-            font-weight: 600;
-            font-size: 15px;
+    <style>
+        /* ====== BASE ====== */
+        body {
+            font-size: 13px;
         }
 
-    /* ====== TREE CONTROLS ====== */
-    .tree-controls {
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 8px;
-        margin-bottom: 10px;
-        flex-shrink: 0;
-    }
-
-        .tree-controls .control-group {
-            margin-bottom: 6px;
+        .phonebook-container {
+            padding: 10px 0;
+            height: calc(100vh - 80px);
+            overflow: hidden;
         }
 
-            .tree-controls .control-group:last-child {
-                margin-bottom: 0;
+        .section-card {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            padding: 12px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            flex-shrink: 0;
+        }
+
+            .section-header h3 {
+                margin: 0;
+                color: #2c3e50;
+                font-weight: 600;
+                font-size: 15px;
             }
 
-        .tree-controls label {
-            font-size: 11px;
-            font-weight: 600;
-            color: #495057;
-            margin-bottom: 3px;
-            display: block;
+        /* ====== TREE CONTROLS ====== */
+        .tree-controls {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
         }
 
-    /* ====== SEARCH BOX ====== */
-    .search-box {
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 8px;
-        margin-bottom: 10px;
-        flex-shrink: 0;
-    }
+            .tree-controls .control-group {
+                margin-bottom: 6px;
+            }
 
-        .search-box label {
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 3px;
+                .tree-controls .control-group:last-child {
+                    margin-bottom: 0;
+                }
+
+            .tree-controls label {
+                font-size: 11px;
+                font-weight: 600;
+                color: #495057;
+                margin-bottom: 3px;
+                display: block;
+            }
+
+        /* ====== SEARCH BOX ====== */
+        .search-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
         }
 
-        .search-box input {
-            border-radius: 3px;
+            .search-box label {
+                font-size: 11px;
+                font-weight: 600;
+                margin-bottom: 3px;
+            }
+
+            .search-box input {
+                border-radius: 3px;
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+        /* ====== EMPLOYEE COUNT ====== */
+        .employee-count {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
             font-size: 12px;
+            margin-top: 8px;
+            box-shadow: 0 1px 4px rgba(102, 126, 234, 0.3);
+            flex-shrink: 0;
+        }
+
+        /* ====== TREE & GRID ====== */
+        .tree-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 6px;
+            background: #fff;
+        }
+
+        .grid-wrapper {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #deptTree {
+            font-size: 12px;
+        }
+
+            #deptTree .k-in {
+                padding: 4px 6px;
+            }
+
+        .k-grid {
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 12px;
+            flex: 1;
+            font-family: "DejaVu Sans", Arial, sans-serif;
+        }
+
+        .k-grid-header th {
+            font-size: 12px;
+            padding: 6px 8px;
+        }
+
+        .k-grid-content td {
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        .k-pager-wrap {
+            font-size: 11px;
             padding: 4px 8px;
         }
 
-    /* ====== EMPLOYEE COUNT ====== */
-    .employee-count {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 6px 12px;
-        border-radius: 4px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 12px;
-        margin-top: 8px;
-        box-shadow: 0 1px 4px rgba(102, 126, 234, 0.3);
-        flex-shrink: 0;
-    }
-
-    /* ====== TREE & GRID ====== */
-    .tree-wrapper {
-        flex: 1;
-        overflow-y: auto;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 6px;
-        background: #fff;
-    }
-
-    .grid-wrapper {
-        flex: 1;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #deptTree {
-        font-size: 12px;
-    }
-
-        #deptTree .k-in {
-            padding: 4px 6px;
+        .row-number {
+            font-weight: 600;
+            color: #6c757d;
         }
 
-    .k-grid {
-        border-radius: 4px;
-        overflow: hidden;
-        font-size: 12px;
-        flex: 1;
-        font-family: "DejaVu Sans", "Arial", sans-serif;
-    }
-
-    .k-grid-header th {
-        font-size: 12px;
-        padding: 6px 8px;
-    }
-
-    .k-grid-content td {
-        padding: 4px 8px;
-        font-size: 12px;
-    }
-
-    .k-pager-wrap {
-        font-size: 11px;
-        padding: 4px 8px;
-    }
-
-    .row-number {
-        font-weight: 600;
-        color: #6c757d;
-    }
-
-    /* ====== EXPORT PDF STYLE ====== */
-    .k-pdf-export {
-        font-family: 'Roboto', 'DejaVu Sans', 'Arial', sans-serif !important;
-    }
-
-        .k-pdf-export .k-grid-toolbar,
-        .k-pdf-export .k-filter-row,
-        .k-pdf-export .k-pager {
-            display: none !important;
+        /* ====== EXPORT PDF STYLE ====== */
+        .k-pdf-export {
+            font-family: 'Roboto', 'DejaVu Sans', Arial, sans-serif !important;
         }
 
-    /* ====== PDF TEMPLATE ====== */
-    .page-template {
-        font-family: "Arial", sans-serif;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
+            .k-pdf-export .k-grid-toolbar,
+            .k-pdf-export .k-filter-row,
+            .k-pdf-export .k-pager {
+                display: none !important;
+            }
 
-        .page-template .header {
+        /* ====== PDF TEMPLATE ====== */
+        .page-template {
+            font-family: "Arial", sans-serif;
             position: absolute;
-            top: 30px;
-            left: 30px;
-            right: 30px;
-            border-bottom: 1px solid #888;
-            color: #888;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
         }
 
-        .page-template .footer {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            right: 30px;
-            border-top: 1px solid #888;
-            text-align: center;
-            color: #888;
+            .page-template .header {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                right: 30px;
+                border-bottom: 1px solid #888;
+                color: #888;
+            }
+
+            .page-template .footer {
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
+                right: 30px;
+                border-top: 1px solid #888;
+                text-align: center;
+                color: #888;
+            }
+
+            .page-template .watermark {
+                font-weight: bold;
+                font-size: 400%;
+                text-align: center;
+                margin-top: 30%;
+                color: #aaa;
+                opacity: 0.1;
+                transform: rotate(-35deg) scale(1.7, 1.5);
+            }
+
+        .k-grid .k-grid-content {
+            overflow-y: auto !important;
         }
 
-        .page-template .watermark {
-            font-weight: bold;
-            font-size: 400%;
-            text-align: center;
-            margin-top: 30%;
-            color: #aaa;
-            opacity: 0.1;
-            transform: rotate(-35deg) scale(1.7, 1.5);
+        @@media (max-width: 768px) {
+            .phonebook-container
+
+        {
+            height: auto;
+            overflow: auto;
         }
 
-    .k-grid .k-grid-content {
-        overflow-y: auto !important;
-    }
+        .section-card {
+            margin-bottom: 15px;
+            height: auto;
+        }
 
-    @@media (max-width: 768px) {
-        .phonebook-container
+        }
+    </style>
 
-    {
-        height: auto;
-        overflow: auto;
-    }
+    <!-- ===================== MAIN UI ===================== -->
+    <div class="phonebook-container">
+        <div class="row h-100">
 
-    .section-card {
-        margin-bottom: 15px;
-        height: auto;
-    }
-
-    }
-</style>
-
-<!-- ===================== MAIN UI ===================== -->
-<div class="phonebook-container">
-    <div class="row h-100">
-
-        <!-- CỘT TRÁI: Cây Phòng Ban -->
-        <div class="col-lg-3 col-md-4 h-100">
-            <div class="section-card">
-                <div class="section-header">
-                    <h3><i class="fas fa-sitemap me-2"></i>Phòng Ban</h3>
-                </div>
-
-                <div class="tree-controls">
-                    <div class="btn-group w-100 mb-2">
-                        <button id="expandAllNodes" class="btn btn-sm btn-outline-primary">
-                            <i class="fas fa-plus-circle me-1"></i>Mở rộng
-                        </button>
-                        <button id="collapseAllNodes" class="btn btn-sm btn-outline-secondary">
-                            <i class="fas fa-minus-circle me-1"></i>Thu nhỏ
-                        </button>
+            <!-- TREEVIEW -->
+            <div class="col-lg-3 col-md-4 h-100">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3><i class="fas fa-sitemap me-2"></i>@Localizer["DepartmentTitle"]</h3>
                     </div>
 
-                    <input id="filterText" class="form-control form-control-sm" placeholder="Nhập tên phòng ban..." />
-                </div>
+                    <div class="tree-controls">
+                        <div class="btn-group w-100 mb-2">
+                            <button id="expandAllNodes" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-plus-circle me-1"></i>@Localizer["ExpandAll"]
+                            </button>
+                            <button id="collapseAllNodes" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-minus-circle me-1"></i>@Localizer["CollapseAll"]
+                            </button>
+                        </div>
 
-                <div class="tree-wrapper">
-                    @(Html.Kendo().TreeView()
-                                        .Name("deptTree")
-                                        .DataTextField("text")
-                                        .DataSource(ds => ds
-                                        .Read(r => r.Url(Url.Action("GetDepartments", "Home")))
-                                        .Model(m =>
-                                        {
-                                            m.Id("id");
-                                            m.Children("items");
-                                        })
-                                        )
-                                        .Events(e => e.Select("onDeptSelect"))
-                                        )
+                    <input id="filterText" class="form-control form-control-sm" placeholder="@Localizer["SearchPlaceholder"]" />
+                    </div>
+
+                    <div class="tree-wrapper">
+                        @(Html.Kendo().TreeView()
+                                            .Name("deptTree")
+                                            .DataTextField("text")
+                                            .DataSource(ds => ds
+                                            .Read(r => r.Url(Url.Action("GetDepartments", "Home")))
+                                            .Model(m =>
+                                            {
+                                                m.Id("id");
+                                                m.Children("items");
+                                            })
+                                            )
+                                            .Events(e => e.Select("onDeptSelect"))
+                                            )
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- CỘT PHẢI: Danh Sách Nhân Viên -->
-        <div class="col-lg-9 col-md-7 h-100">
-            <div class="section-card">
-                <div class="section-header">
-                    <h3><i class="fas fa-users me-2"></i>Danh Sách Nhân Viên</h3>
-                </div>
+            <!-- EMPLOYEES LIST -->
+            <div class="col-lg-9 col-md-7 h-100">
+                <div class="section-card">
+                    <div class="section-header">
+                    <h3><i class="fas fa-users me-2"></i>@Localizer["EmployeeListTitle"]</h3>
+                    </div>
 
-                <div class="search-box">
-                    <label class="form-label mb-1"><i class="fas fa-search me-1"></i>Tìm kiếm</label>
-                    <input type="text" id="employeeSearch" class="form-control form-control-sm"
-                           placeholder="Tìm theo tên, số điện thoại..." />
-                </div>
+                    <div class="search-box">
+                    <label class="form-label mb-1"><i class="fas fa-search me-1"></i>@Localizer["SearchLabel"]</label>
+                        <input type="text" id="employeeSearch" class="form-control form-control-sm"
+                           placeholder="@Localizer["SearchBoxPlaceholder"]" />
+                    </div>
 
-                <div class="grid-wrapper">
-                    @(Html.Kendo().Grid<PhoneBook.Models.Employee>()
-                                        .Name("employeeGrid")
-                                        .ToolBar(tools => { tools.Pdf(); tools.Excel(); })
-                                        .Excel(excel => excel.FileName("PhoneBook_Export.xlsx").AllPages(true))
-                                        .Pdf(pdf => pdf
-                                        .AllPages()
-                                        .AvoidLinks()
-                                        .PaperSize("A4")
-                                        .Scale(0.8)
-                                        .Margin("2cm", "1cm", "1cm", "1cm")
-                                        .Landscape()
-                                        .TemplateId("page-template")
-                                        .FileName("PhoneBook_Export.pdf")
-                                        .ProxyURL(Url.Action("Pdf_Export_Save", "Grid"))
-                                        )
-                                        .Columns(columns =>
-                                        {
-                                            columns.Template("<span class='row-number'></span>").Title("STT").Width(50).HtmlAttributes(new { @class = "text-center" });
-                                            columns.Bound(e => e.FullName).Title("Họ và Tên").Width(180);
-                                            columns.Bound(e => e.WorkingPhone).Title("ĐT Công Việc").Width(120).HtmlAttributes(new { @class = "text-center" });
-                                            columns.Bound(e => e.HandPhone).Title("Di Động").Width(120).HtmlAttributes(new { @class = "text-center" });
-                                            columns.Bound(e => e.HomePhone).Title("ĐT Nhà").Width(120).HtmlAttributes(new { @class = "text-center" });
-                                        })
-                                        .Sortable()
-                                        .Filterable(f => f.Mode(GridFilterMode.Row))
-                                        .Pageable(page => page.PageSizes(new int[] { 15, 30, 50, 100 }).ButtonCount(5))
-                                        .DataSource(ds => ds
-                                        .Ajax()
-                                        .ServerOperation(false)
-                                        .PageSize(10)
-                                        .Read(read => read.Url(Url.Action("GetAllEmployees", "Home")))
-                                        .Model(m => m.Id(e => e.UserId))
-                                        )
-                                        .Scrollable()
-                                        .Events(e => e.DataBound("onGridDataBound"))
-                                        )
-                </div>
+                    <div class="grid-wrapper">
+                        @(Html.Kendo().Grid<PhoneBook.Models.Employee>()
+                                            .Name("employeeGrid")
+                                            .ToolBar(tools => { tools.Pdf(); tools.Excel(); })
+                                            .Excel(excel => excel.FileName("PhoneBook_Export.xlsx").AllPages(true))
+                                            .Pdf(pdf => pdf
+                                            .AllPages()
+                                            .AvoidLinks()
+                                            .PaperSize("A4")
+                                            .Scale(0.8)
+                                            .Margin("2cm", "1cm", "1cm", "1cm")
+                                            .Landscape()
+                                            .TemplateId("page-template")
+                                            .FileName("PhoneBook.pdf")
+                                            .ProxyURL(Url.Action("Pdf_Export_Save", "Grid"))
+                                            .ForceProxy(true)
+                                            )
+                                            .Columns(columns =>
+                                            {
+                                            columns.Template("<span class='row-number'></span>").Title(@Localizer["Column_STT"].Value).Width(50).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.FullName).Title(@Localizer["Column_FullName"].Value).Width(180);
+                                            columns.Bound(e => e.WorkingPhone).Title(@Localizer["Column_WorkPhone"].Value).Width(120).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.HandPhone).Title(@Localizer["Column_Mobile"].Value).Width(120).HtmlAttributes(new { @class = "text-center" });
+                                            columns.Bound(e => e.HomePhone).Title(@Localizer["Column_HomePhone"].Value).Width(120).HtmlAttributes(new { @class = "text-center" });
+                                            })
+                                            .Sortable()
+                                            .Filterable(f => f.Mode(GridFilterMode.Row))
+                                            .Pageable(page => page
+                                                .PageSizes(new int[] { 15, 30, 50, 100 })
+                                                .ButtonCount(5)
+                                                .Messages(m => m
+                                                .ItemsPerPage(@Localizer["ItemsPerPageMsg"].Value)
+                                                .Display(@Localizer["DisplayMsg"].Value)
+                                                .Empty(@Localizer["EmptyMsg"].Value)
+                                                .First(@Localizer["FirstMsg"].Value)
+                                                .Last(@Localizer["LastMsg"].Value)
+                                                .Next(@Localizer["NextMsg"].Value)
+                                                .Previous(@Localizer["PreviousMsg"].Value)
+                                                .Refresh(@Localizer["RefreshMsg"].Value)
+                                            )
+                                        ).DataSource(ds => ds
+                                            .Ajax()
+                                            .ServerOperation(false)
+                                            .PageSize(10)
+                                            .Read(r => r.Action("GetAllEmployees", "Home"))
+                                            .Model(m => m.Id(e => e.UserId))
+                                            )
+                                            .Scrollable()
+                                            .Events(e => e.DataBound("onGridDataBound"))
+                                            )
+                    </div>
 
-                <div id="empCount" class="employee-count">
-                    <i class="fas fa-user-check me-2"></i><span>Đang tải dữ liệu...</span>
+                    <div id="empCount" class="employee-count">
+                    <i class="fas fa-user-check me-2"></i><span>@Localizer["LoadingEmployees"]</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- ===================== SCRIPTS ===================== -->
-@section Scripts {
-    <script type="x/kendo-template" id="page-template">
-        <div class="page-template">
-            <div class="header">
-                <div style="float:right">Page #: pageNum # of #: totalPages #</div>
-                PhoneBook
+    <!-- ===================== SCRIPTS ===================== -->
+    @section Scripts {
+        <script type="x/kendo-template" id="page-template">
+            <div class="page-template">
+                <div class="header">
+                    <div style="float:right">@Localizer["PdfFooterText"]</div>
+                    PhoneBook
+                </div>
+                <div class="watermark">SAGS</div>
+        <div class="footer">@Localizer["PdfFooterText"]</div>
             </div>
-            <div class="watermark">SAGS</div>
-            <div class="footer">Page #: pageNum # of #: totalPages #</div>
-        </div>
-    </script>
+        </script>
 
-    <script>
-        $(document).ready(function () {
-            kendo.pdf.defineFont({
-                "Roboto": "https://localhost:44364/fonts/Roboto/static/Roboto-Regular.ttf",
-                "Roboto|Bold": "https://localhost:44364/fonts/Roboto/static/Roboto-Bold.ttf",
-                "Roboto|Italic": "https://localhost:44364/fonts/Roboto/static/Roboto-Italic.ttf",
-                "Roboto|Bold|Italic": "https://localhost:44364/fonts/Roboto/static/Roboto-BoldItalic.ttf"
-            });
-
-            const grid = $("#employeeGrid").data("kendoGrid");
-            if (grid) grid.dataSource.read();
-
-            $("#employeeSearch").on("input", function () {
-                const val = $(this).val().toLowerCase();
-                grid.dataSource.filter(!val ? {} : {
-                    logic: "or",
-                    filters: [
-                        { field: "FullName", operator: "contains", value: val },
-                        { field: "WorkingPhone", operator: "contains", value: val },
-                        { field: "HandPhone", operator: "contains", value: val },
-                        { field: "HomePhone", operator: "contains", value: val }
-                    ]
+        <script>
+            $(document).ready(function () {
+                kendo.pdf.defineFont({
+                    "DejaVu Sans": "https://kendo.cdn.telerik.com/2023.1.117/styles/fonts/DejaVu/DejaVuSans.ttf",
+                    "DejaVu Sans|Bold": "https://kendo.cdn.telerik.com/2023.1.117/styles/fonts/DejaVu/DejaVuSans-Bold.ttf",
+                    "DejaVu Sans|Italic": "https://kendo.cdn.telerik.com/2023.1.117/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+                    "DejaVu Sans|Bold|Italic": "https://kendo.cdn.telerik.com/2023.1.117/styles/fonts/DejaVu/DejaVuSans-BoldOblique.ttf"
                 });
+
+                const grid = $("#employeeGrid").data("kendoGrid");
+                if (grid) grid.dataSource.read();
+
+                $("#employeeSearch").on("input", function () {
+                    const val = $(this).val().toLowerCase();
+                    grid.dataSource.filter(!val ? {} : {
+                        logic: "or",
+                        filters: [
+                            { field: "FullName", operator: "contains", value: val },
+                            { field: "WorkingPhone", operator: "contains", value: val },
+                            { field: "HandPhone", operator: "contains", value: val },
+                            { field: "HomePhone", operator: "contains", value: val }
+                        ]
+                    });
+                });
+
+                adjustGridHeight();
+                $(window).on("resize", adjustGridHeight);
             });
 
-            adjustGridHeight();
-            $(window).on("resize", adjustGridHeight);
-        });
+            function adjustGridHeight() {
+                const gridWrapper = $(".grid-wrapper");
+                const grid = $("#employeeGrid").data("kendoGrid");
+                if (!grid) return;
 
-        function adjustGridHeight() {
-            const gridWrapper = $(".grid-wrapper");
-            const grid = $("#employeeGrid").data("kendoGrid");
-            if (!grid) return;
-
-            const h = gridWrapper.height();
-            const g = grid.wrapper;
-            const header = g.find(".k-grid-header").outerHeight();
-            const pager = g.find(".k-grid-pager").outerHeight();
-            g.find(".k-grid-content").height(h - header - pager - 10);
-        }
-
-        function onGridDataBound(e) {
-            const grid = this;
-            const rows = grid.items();
-            let index = (grid.dataSource.page() - 1) * grid.dataSource.pageSize();
-            rows.each(function () {
-                $(this).find(".row-number").text(++index);
-            });
-            updateEmployeeCount(grid.dataSource.total());
-            adjustGridHeight();
-        }
-
-        function updateEmployeeCount(count) {
-            $("#empCount").html(`<i class="fas fa-user-check me-2"></i>Tổng số nhân viên: <strong>${count}</strong>`);
-        }
-
-        async function onDeptSelect(e) {
-            const tree = $("#deptTree").data("kendoTreeView");
-            const node = tree.dataItem(e.node);
-            const grid = $("#employeeGrid").data("kendoGrid");
-            $("#employeeSearch").val("");
-
-            const url = (node.parentId === -1 || node.parentId === "-1")
-                ? "/Home/GetAllEmployees"
-                : `/Home/GetEmployeesByDepartment?departmentId=${node.id}`;
-
-            try {
-                const res = await fetch(url);
-                const data = await res.json();
-                grid.dataSource.data(data);
-                updateEmployeeCount(data.length);
-            } catch {
-                $("#empCount").html(`<i class="fas fa-exclamation-triangle me-2"></i>Lỗi tải dữ liệu!`);
-            }
-        }
-
-        (function initTreeControls() {
-            function whenTreeReady(cb, tries = 30) {
-                const i = setInterval(() => {
-                    const t = $("#deptTree").data("kendoTreeView");
-                    if (t || --tries <= 0) {
-                        clearInterval(i);
-                        if (t) cb(t);
-                    }
-                }, 200);
+                const h = gridWrapper.height();
+                const g = grid.wrapper;
+                const header = g.find(".k-grid-header").outerHeight();
+                const pager = g.find(".k-grid-pager").outerHeight();
+                g.find(".k-grid-content").height(h - header - pager - 10);
             }
 
-            function expandAll(t) { t.items().each(function () { t.expand(this); }); }
-            function collapseAll(t) { t.items().each(function () { t.collapse(this); }); }
-            function applyFilter(t, text) {
-                if (!text) return t.dataSource.filter({});
-                t.dataSource.filter({ field: "text", operator: "contains", value: text });
-                setTimeout(() => expandAll(t), 120);
+            function onGridDataBound(e) {
+                const grid = this;
+                const rows = grid.items();
+                let index = (grid.dataSource.page() - 1) * grid.dataSource.pageSize();
+                rows.each(function () {
+                    $(this).find(".row-number").text(++index);
+                });
+                updateEmployeeCount(grid.dataSource.total());
+                adjustGridHeight();
             }
 
-            whenTreeReady(t => {
-                $("#expandAllNodes").on("click", () => expandAll(t));
-                $("#collapseAllNodes").on("click", () => collapseAll(t));
-                $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
-            });
-        })();
-    </script>
-}
+            function updateEmployeeCount(count) {
+                $("#empCount").html(`<i class="fas fa-user-check me-2"></i>@Localizer["TotalEmployees"] <strong>${count}</strong>`);
+            }
+
+            async function onDeptSelect(e) {
+                const tree = $("#deptTree").data("kendoTreeView");
+                const node = tree.dataItem(e.node);
+                const grid = $("#employeeGrid").data("kendoGrid");
+                $("#employeeSearch").val("");
+
+                const url = (node.parentId === -1 || node.parentId === "-1")
+                    ? "/Home/GetAllEmployees"
+                    : `/Home/GetEmployeesByDepartment?departmentId=${node.id}`;
+
+                try {
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    grid.dataSource.data(data);
+                    updateEmployeeCount(data.length);
+                } catch {
+                    $("#empCount").html(`<i class="fas fa-exclamation-triangle me-2"></i>@Localizer["LoadError"]`);
+                }
+            }
+
+            (function initTreeControls() {
+                function whenTreeReady(cb, tries = 30) {
+                    const i = setInterval(() => {
+                        const t = $("#deptTree").data("kendoTreeView");
+                        if (t || --tries <= 0) {
+                            clearInterval(i);
+                            if (t) cb(t);
+                        }
+                    }, 200);
+                }
+
+                function expandAll(t) { t.items().each(function () { t.expand(this); }); }
+                function collapseAll(t) { t.items().each(function () { t.collapse(this); }); }
+                function applyFilter(t, text) {
+                    if (!text) return t.dataSource.filter({});
+                    t.dataSource.filter({ field: "text", operator: "contains", value: text });
+                    setTimeout(() => expandAll(t), 120);
+                }
+
+                whenTreeReady(t => {
+                    $("#expandAllNodes").on("click", () => expandAll(t));
+                    $("#collapseAllNodes").on("click", () => collapseAll(t));
+                    $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
+                });
+            })();
+        console.log("ProxyURL:", "@Url.Action("Pdf_Export_Save", "Grid")");
+
+        </script>
+    }

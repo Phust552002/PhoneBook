@@ -27,14 +27,8 @@ public class PhoneBookRepository : IPhoneBookRepository
             ORDER BY ParentId, DepartmentName";
 
         using var conn = CreateConnection();
-        Debug.WriteLine("[GetDepartmentsAsync] Đang thực thi truy vấn SQL...");
         var all = (await conn.QueryAsync<Department>(sql)).ToList();
-        Debug.WriteLine($"Đã lấy {all.Count} phòng ban từ DB.");
 
-        if (!all.Any())
-        {
-            Debug.WriteLine("⚠️ Không có dữ liệu phòng ban nào được trả về (có thể Status != 1 hoặc bảng trống).");
-        }
 
         // Dựng cây (Tree View)
         var lookup = all.ToDictionary(d => d.DepartmentId);
@@ -43,12 +37,10 @@ public class PhoneBookRepository : IPhoneBookRepository
             if (dept.ParentId != -1 && lookup.ContainsKey(dept.ParentId))
             {
                 lookup[dept.ParentId].Children.Add(dept);
-                Debug.WriteLine($"✓ Gắn {dept.DepartmentName} vào cha {lookup[dept.ParentId].DepartmentName}");
             }
         }
 
         var roots = all.Where(d => d.ParentId == -1).ToList();
-        Debug.WriteLine($"Có {roots.Count} phòng ban gốc được tạo cây.");
         return roots;
     }
 
@@ -76,7 +68,6 @@ public class PhoneBookRepository : IPhoneBookRepository
 
         using var conn = CreateConnection();
         var result = (await conn.QueryAsync<Employee>(sql, new { departmentId })).ToList();
-        Debug.WriteLine($"✓ Đã lấy {result.Count} nhân viên (bao gồm cả phòng con) của phòng ban {departmentId}.");
         return result;
     }
 
@@ -95,7 +86,7 @@ public class PhoneBookRepository : IPhoneBookRepository
         return employees.ToList();
     }
 
-    // 🔹 Lấy thông tin nhân viên theo username (cho đăng nhập)
+    // Lấy thông tin nhân viên theo username - nav
     public async Task<Employee> GetEmployeeByUsernameAsync(string username)
     {
         const string sql = @"
@@ -109,19 +100,7 @@ public class PhoneBookRepository : IPhoneBookRepository
             WHERE e.UserName = @Username AND e.Status > 0";
 
         using var conn = CreateConnection();
-        Debug.WriteLine($"[GetEmployeeByUsernameAsync] Đang tìm user: {username}");
-
         var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { Username = username });
-
-        if (employee != null)
-        {
-            Debug.WriteLine($"✓ Tìm thấy user: {employee.FullName} (UserId: {employee.UserId})");
-        }
-        else
-        {
-            Debug.WriteLine($"⚠️ Không tìm thấy user: {username}");
-        }
-
         return employee;
     }
 
@@ -139,19 +118,7 @@ public class PhoneBookRepository : IPhoneBookRepository
             WHERE e.UserId = @UserId AND e.Status > 0";
 
         using var conn = CreateConnection();
-        Debug.WriteLine($"[GetEmployeeByIdAsync] Đang tìm user với ID: {userId}");
-
         var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { UserId = userId });
-
-        if (employee != null)
-        {
-            Debug.WriteLine($"✓ Tìm thấy user: {employee.FullName}");
-        }
-        else
-        {
-            Debug.WriteLine($"⚠️ Không tìm thấy user với ID: {userId}");
-        }
-
         return employee;
     }
 }

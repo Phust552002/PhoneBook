@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UJisXq4LWhg=",
+  "dgSpecHash": "CWvfcFLLlsc=",
   "success": true,
   "projectFilePath": "C:\\Users\\huynh\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
   "expectedPackageFiles": [
@@ -115,6 +115,8 @@
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.1\\microsoft.extensions.diagnostics.abstractions.8.0.1.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.1\\microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.localization\\9.0.10\\microsoft.extensions.localization.9.0.10.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\9.0.10\\microsoft.extensions.localization.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.logging\\9.0.10\\microsoft.extensions.logging.9.0.10.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.10\\microsoft.extensions.logging.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.11\\microsoft.extensions.objectpool.8.0.11.nupkg.sha512",

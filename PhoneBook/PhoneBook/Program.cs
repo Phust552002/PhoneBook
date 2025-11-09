@@ -6,15 +6,21 @@ using Microsoft.Extensions.Hosting;
 using PhoneBook.Models;
 using PhoneBook.Services;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services
+    .AddControllersWithViews()
+    .AddViewLocalization()              
+    .AddDataAnnotationsLocalization(); 
 builder.Services.AddSession(options =>
 {
-    options.Cookie.SecurePolicy = CookieSecurePolicy.None; // Cho phép HTTP
+    options.Cookie.SecurePolicy = CookieSecurePolicy.None;
     options.Cookie.SameSite = SameSiteMode.Lax;
 });
 builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
@@ -41,7 +47,7 @@ builder.Services.AddAuthorization();
 // Cấu hình Session
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(5);
+    options.IdleTimeout = TimeSpan.FromMinutes(1);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -54,7 +60,20 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 var app = builder.Build();
+var supportedCultures = new[] { "en-US", "vi-VN" };
 
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture("vi-VN")
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+// Cho phép đọc culture từ cookie "culture"
+localizationOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider
+{
+    CookieName = "culture"
+});
+
+app.UseRequestLocalization(localizationOptions);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -79,6 +98,7 @@ app.UseStaticFiles(new StaticFileOptions
     ServeUnknownFileTypes = true,
     DefaultContentType = "application/octet-stream"
 });
+
 app.UseRouting();
 
 app.UseAuthentication();

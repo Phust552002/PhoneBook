@@ -16,6 +16,8 @@
           "Microsoft.EntityFrameworkCore.Abstractions": "9.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
+          "Microsoft.Extensions.Localization": "9.0.10",
+          "Microsoft.Extensions.Localization.Abstractions": "9.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
           "QuestPDF": "2025.7.4",
           "Telerik.Documents.Core": "2024.4.1106",
@@ -23,6 +25,11 @@
         },
         "runtime": {
           "PhoneBook.dll": {}
+        },
+        "resources": {
+          "vi/PhoneBook.resources.dll": {
+            "locale": "vi"
+          }
         }
       },
       "Azure.Core/1.38.0": {
@@ -1643,6 +1650,28 @@
           "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Extensions.Localization/9.0.10": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.10",
+          "Microsoft.Extensions.Localization.Abstractions": "9.0.10",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.10",
+          "Microsoft.Extensions.Options": "9.0.10"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47517"
+          }
+        }
+      },
+      "Microsoft.Extensions.Localization.Abstractions/9.0.10": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.1025.47517"
           }
         }
       },
@@ -3652,6 +3681,20 @@
       "sha512": "sha512-nHwq9aPBdBPYXPti6wYEEfgXddfBrYC+CQLn+qISiwQq5tpfaqDZSKOJNxoe9rfQxGf1c+2wC/qWFe1QYJPYqw==",
       "path": "microsoft.extensions.hosting.abstractions/8.0.1",
       "hashPath": "microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Localization/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bkFuLlXY/jc+//UZ2NAkrWYEsdzsaKTsS4J1sSKYKXqZHn5ZXS18wbGOd0xyo9yEY91xME3RqEN6+bIx05b77g==",
+      "path": "microsoft.extensions.localization/9.0.10",
+      "hashPath": "microsoft.extensions.localization.9.0.10.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Localization.Abstractions/9.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tK8JHWvsVEb4NrvShwi/Q+LC7ttZbH6rdYpPoQGfb+eeIEJ4MYHgZnkOFVyMoOoIxlQ4tAf5perbdDo1ahIK6Q==",
+      "path": "microsoft.extensions.localization.abstractions/9.0.10",
+      "hashPath": "microsoft.extensions.localization.abstractions.9.0.10.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/9.0.10": {
       "type": "package",
