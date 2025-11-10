@@ -154,4 +154,29 @@ public class PhoneBookRepository : IPhoneBookRepository
             return rowsAffected > 0;
         
     }
-}
+    public async Task<List<int>> GetUserRolesAsync(int userId)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            await connection.OpenAsync();
+
+            var query = "SELECT RoleId FROM UserRoles WHERE UserId = @UserId";
+
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@UserId", userId);
+
+                var roles = new List<int>();
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        roles.Add(reader.GetInt32(0));
+                    }
+                }
+
+                return roles;
+            }
+        }
+    }
+    }

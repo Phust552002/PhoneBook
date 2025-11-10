@@ -1,16 +1,17 @@
 ﻿using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using PhoneBook.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Http;
 
 namespace PhoneBook.Controllers
 {
@@ -28,9 +29,10 @@ namespace PhoneBook.Controllers
         {
             var fullName = User.FindFirst("FullName")?.Value ?? User.Identity.Name;
             var positionName = User.FindFirst("PositionName")?.Value ?? "Nhân viên";
-
+            var isAdmin = User.FindFirst("IsAdmin")?.Value == "True";
             ViewBag.UserName = fullName;
             ViewBag.UserPosition = positionName;
+            ViewBag.isAdmin = isAdmin;
             var departments = await _repo.GetDepartmentsAsync();
             return View(departments);
         }
@@ -90,15 +92,27 @@ namespace PhoneBook.Controllers
                 return Json(employees);
         }
 
+        //Đọc dữ liệu từ request 
+        //Cố gắng gán giá trị cho từng thuộc tính của employee
+        //Kiểm tra các attribute validation trên model(như[Required], [StringLength], [Range], v.v.)
+        //Lưu kết quả vào ModelState:
+        //Nếu dữ liệu hợp lệ → ModelState.IsValid = true
         [HttpPost]
         public async Task<IActionResult> UpdateEmployee([DataSourceRequest] DataSourceRequest request, Employee employee)
         {
+            var isAdmin = User.FindFirst("IsAdmin")?.Value == "True";
+            if(!isAdmin)
+            {
+                ModelState.AddModelError("", "You do not have permission to update employee information.");
+                return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
+            }  
+            
             if (employee == null || employee.UserId <= 0)
             {
                 return Json(new[] { employee }.ToDataSourceResult(request));
             }
 
-                if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 {
                     return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
                 }
@@ -106,16 +120,17 @@ namespace PhoneBook.Controllers
                 // Update employee
                 var result = await _repo.UpdateEmployeeAsync(employee);
 
-                if (result)
+            if (result)
                 {
-                    return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
+
+                return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
                 }
-                else
+            else
                 {
                     ModelState.AddModelError("", "Failed to update employee");
                     return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
                 }
-            
+
         }
 
         public IActionResult SetLanguage(string culture, string returnUrl = "/")

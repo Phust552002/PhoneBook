@@ -11,5 +11,6 @@ public interface IPhoneBookRepository
     Task<Employee> GetEmployeeByUsernameAsync(string username);
     Task<Employee> GetEmployeeByIdAsync(int userId);
     Task<bool> UpdateEmployeeAsync(Employee employee);
+    Task<List<int>> GetUserRolesAsync(int userId);
 
 }

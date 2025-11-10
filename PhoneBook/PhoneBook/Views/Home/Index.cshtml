@@ -2,6 +2,7 @@
 @using Kendo.Mvc
 @{
     ViewData["Title"] = "PhoneBook";
+    var isAdmin = ViewBag.IsAdmin ?? false;
 }
 
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
@@ -315,34 +316,38 @@
                                             .Title(@Localizer["Column_STT"].Value)
                                             .Width(60)
                                             .HtmlAttributes(new { @class = "text-center" })
-                                           @*  .Locked(true) *@;
+                        @*  .Locked(true) *@
+                        ;
 
-                                            columns.Bound(e => e.FullName)
-                                            .Title(@Localizer["Column_FullName"].Value)
-                                            .Width(240);
+                                                columns.Bound(e => e.FullName)
+                                                .Title(@Localizer["Column_FullName"].Value)
+                                                .Width(240);
 
-                                            columns.Bound(e => e.WorkingPhone)
-                                            .Title(@Localizer["Column_WorkPhone"].Value)
-                                            .Width(200)
-                                            .HtmlAttributes(new { @class = "text-center" });
+                                                columns.Bound(e => e.WorkingPhone)
+                                                .Title(@Localizer["Column_WorkPhone"].Value)
+                                                .Width(200)
+                                                .HtmlAttributes(new { @class = "text-center" });
 
-                                            columns.Bound(e => e.HandPhone)
-                                            .Title(@Localizer["Column_Mobile"].Value)
-                                            .Width(200)
-                                            .HtmlAttributes(new { @class = "text-center" });
+                                                columns.Bound(e => e.HandPhone)
+                                                .Title(@Localizer["Column_Mobile"].Value)
+                                                .Width(200)
+                                                .HtmlAttributes(new { @class = "text-center" });
 
-                                            columns.Bound(e => e.BusinessEmail)
-                                            .Title(@Localizer["Column_BusinessEmail"].Value)
-                                            .Width(200)
-                                            .HtmlAttributes(new { @class = "text-center" });
-
-                                            columns.Command(command => {command
-                                                .Edit()
-                                                .Text(" ")
-                                                .UpdateText("Save")
-                                                .CancelText("Cancel"); 
-                                            }).Width(240);
-
+                                                columns.Bound(e => e.BusinessEmail)
+                                                .Title(@Localizer["Column_BusinessEmail"].Value)
+                                                .Width(200)
+                                                .HtmlAttributes(new { @class = "text-center" });
+                                                if (isAdmin)
+                                                {
+                                                    columns.Command(command =>
+                                                    {
+                                                        command
+                                                        .Edit()
+                                                        .Text(" ")
+                                                        .UpdateText("Save")
+                                                        .CancelText("Cancel");
+                                                    }).Width(240);
+                                                }
                                         })
                                         .Sortable()
                                    @*      .Filterable(f => f.Mode(GridFilterMode.Menu)) *@
@@ -404,7 +409,7 @@
     </script>
 
     <script>
-
+        var IsAdmin = @Json.Serialize(isAdmin);
         $(document).ready(function () {
             kendo.pdf.defineFont({
                 "DejaVu Sans": "https://kendo.cdn.telerik.com/2023.1.117/styles/fonts/DejaVu/DejaVuSans.ttf",
