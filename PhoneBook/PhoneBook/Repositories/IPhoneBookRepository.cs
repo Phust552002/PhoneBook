@@ -10,4 +10,6 @@ public interface IPhoneBookRepository
     // New methods for authentication
     Task<Employee> GetEmployeeByUsernameAsync(string username);
     Task<Employee> GetEmployeeByIdAsync(int userId);
+    Task<bool> UpdateEmployeeAsync(Employee employee);
+
 }

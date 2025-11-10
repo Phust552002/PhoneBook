@@ -10742,32 +10742,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\huynh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+      "projectUniqueName": "C:\\Users\\huynh\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
       "projectName": "PhoneBook",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\obj\\",
+      "projectPath": "C:\\Users\\huynh\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
+      "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huynh\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\NuGet.Config",
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huynh\\Documents\\GitHub\\PhoneBook\\PhoneBook\\NuGet.Config",
+        "C:\\Users\\huynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WinForms.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -10776,7 +10770,6 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files (x86)\\Progress\\Telerik UI for ASP.NET Core 2024 Q4\\": {},
         "C:\\Program Files (x86)\\Progress\\Telerik UI for ASP.NET Core 2024 Q4\\wrappers\\aspnetcore\\Binaries\\AspNet.Core": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

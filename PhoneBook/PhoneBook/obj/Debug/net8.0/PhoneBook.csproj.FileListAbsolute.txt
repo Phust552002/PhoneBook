@@ -970,3 +970,13 @@ C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\M
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.ApplicationInsights.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.ApplicationInsights.AspNetCore.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AI.DependencyCollector.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AI.EventCounterCollector.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AI.WindowsServer.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\huynh\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll

@@ -83,18 +83,41 @@ namespace PhoneBook.Controllers
         }
 
         [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> GetAllEmployees()
         {
-            try
-            {
                 var employees = await _repo.GetAllEmployeesAsync();
                 return Json(employees);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Lỗi khi lấy danh sách nhân viên.");
-            }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateEmployee([DataSourceRequest] DataSourceRequest request, Employee employee)
+        {
+            if (employee == null || employee.UserId <= 0)
+            {
+                return Json(new[] { employee }.ToDataSourceResult(request));
+            }
+
+                if (!ModelState.IsValid)
+                {
+                    return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
+                }
+
+                // Update employee
+                var result = await _repo.UpdateEmployeeAsync(employee);
+
+                if (result)
+                {
+                    return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Failed to update employee");
+                    return Json(new[] { employee }.ToDataSourceResult(request, ModelState));
+                }
+            
+        }
+
         public IActionResult SetLanguage(string culture, string returnUrl = "/")
         {
             Response.Cookies.Append(
@@ -104,5 +127,7 @@ namespace PhoneBook.Controllers
             );
             return LocalRedirect(returnUrl);
         }
+
+
     }
 }

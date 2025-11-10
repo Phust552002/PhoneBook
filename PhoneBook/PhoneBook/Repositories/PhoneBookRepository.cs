@@ -128,4 +128,30 @@ public class PhoneBookRepository : IPhoneBookRepository
         var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { UserId = userId });
         return employee;
     }
+    public async Task<bool> UpdateEmployeeAsync(Employee employee)
+    {
+            using var connection = CreateConnection();
+
+            var query = @"
+                    UPDATE View_H0_DepartmentEmployee 
+                    SET 
+                        FullName = @FullName,
+                        WorkingPhone = @WorkingPhone,
+                        HandPhone = @HandPhone,
+                        BusinessEmail = @BusinessEmail
+                    WHERE UserId = @UserId";
+
+            var parameters = new
+            {
+                employee.UserId,
+                employee.FullName,
+                employee.WorkingPhone,
+                employee.HandPhone,
+                employee.BusinessEmail,
+            };
+
+            var rowsAffected = await connection.ExecuteAsync(query, parameters);
+            return rowsAffected > 0;
+        
+    }
 }
