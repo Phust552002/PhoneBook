@@ -252,8 +252,8 @@
                             </button>
                         </div>
 
-                    <input id="filterText" class="form-control form-control-sm" placeholder="@Localizer["SearchPlaceholder"]" />
-                    </div>
+@*                     <input id="filterText" class="form-control form-control-sm" placeholder="@Localizer["SearchPlaceholder"]" /> *@  
+                  </div>
 
                     <div class="tree-wrapper">
                         @(Html.Kendo().TreeView()
@@ -312,9 +312,9 @@
                                             columns.Bound(e => e.HomePhone).Title(@Localizer["Column_HomePhone"].Value).Width(120).HtmlAttributes(new { @class = "text-center" });
                                             })
                                             .Sortable()
-                                            .Filterable(f => f.Mode(GridFilterMode.Row))
+                                            .Filterable(f => f.Mode(GridFilterMode.Menu))
                                             .Pageable(page => page
-                                                .PageSizes(new int[] { 15, 30, 50, 100 })
+                                                .PageSizes(new int[] {10, 20, 30, 50, 100 })
                                                 .ButtonCount(5)
                                                 .Messages(m => m
                                                 .ItemsPerPage(@Localizer["ItemsPerPageMsg"].Value)
@@ -457,7 +457,7 @@
                 whenTreeReady(t => {
                     $("#expandAllNodes").on("click", () => expandAll(t));
                     $("#collapseAllNodes").on("click", () => collapseAll(t));
-                    $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
+                    // $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
                 });
             })();
 

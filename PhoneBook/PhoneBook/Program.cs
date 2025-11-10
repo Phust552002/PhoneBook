@@ -44,7 +44,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     });
 builder.Services.AddAuthorization();
 
-// Cấu hình Session
+// Session
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(1);
@@ -67,7 +67,7 @@ var localizationOptions = new RequestLocalizationOptions()
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
-// Cho phép đọc culture từ cookie 
+//  đọc culture từ cookie 
 localizationOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider
 {
     CookieName = "culture"
