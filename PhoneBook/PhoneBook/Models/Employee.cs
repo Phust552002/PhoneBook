@@ -11,7 +11,7 @@ namespace PhoneBook.Models
         public string? FullName { get; set; }
         public string? WorkingPhone { get; set; }
         public string? HandPhone { get; set; }
-        public string? HomePhone { get; set; }
+        public string? BusinessEmail { get; set; }
         public int Status { get; set; }
 
         // Thêm các property cho authentication

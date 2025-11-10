@@ -23,8 +23,8 @@ public class PhoneBookRepository : IPhoneBookRepository
         const string sql = @"
             SELECT DepartmentId, DepartmentName, ParentId, Level, RootName, Status
             FROM H0_Departments
-            WHERE Status > 0
-            ORDER BY ParentId, DepartmentName";
+            WHERE Status =3
+            ORDER BY Sortby";
 
         using var conn = CreateConnection();
         var all = (await conn.QueryAsync<Department>(sql)).ToList();
@@ -58,13 +58,20 @@ public class PhoneBookRepository : IPhoneBookRepository
             INNER JOIN cte ON d.ParentId = cte.DepartmentId
         )
         SELECT DISTINCT 
-            e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
-            e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status
-        FROM H0_DepartmentEmployee de
-        INNER JOIN Employees e ON e.UserId = de.UserId
-        INNER JOIN cte ON de.DepartmentId = cte.DepartmentId
-        WHERE e.Status > 0
-        ORDER BY e.FullName";
+            v.UserId, 
+            v.UserName, 
+            v.EmployeeCode, 
+            v.FullName, 
+            v.WorkingPhone, 
+            v.HandPhone, 
+            v.BusinessEmail, 
+            v.Status,
+            v.Sortby,
+            v.LevelPosition
+        FROM View_H0_DepartmentEmployee v
+        INNER JOIN cte ON v.DepartmentId = cte.DepartmentId
+        WHERE v.Status = 1
+        ORDER BY v.Sortby,v.LevelPosition";
 
         using var conn = CreateConnection();
         var result = (await conn.QueryAsync<Employee>(sql, new { departmentId })).ToList();
@@ -75,11 +82,11 @@ public class PhoneBookRepository : IPhoneBookRepository
     {
         const string sql = @"
         SELECT 
-            e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
-            e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status
-        FROM Employees e
-        WHERE e.Status > 0
-        ORDER BY e.UserId";
+            v.UserId, v.UserName, v.EmployeeCode, v.FullName, 
+            v.WorkingPhone, v.HandPhone, v.BusinessEmail, v.Status, v.Sortby, v.LevelPosition
+        FROM View_H0_DepartmentEmployee v
+        WHERE v.Status = 1
+        ORDER BY v.Sortby,v.LevelPosition";
 
         using var connection = CreateConnection();
         var employees = await connection.QueryAsync<Employee>(sql);
@@ -91,13 +98,13 @@ public class PhoneBookRepository : IPhoneBookRepository
     {
         const string sql = @"
             SELECT 
-                e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
-                e.Password, e.PositionName,
-                e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status,
+                v.UserId, v.UserName, v.EmployeeCode, v.FullName, 
+                v.Password, v.PositionName,
+                v.WorkingPhone, v.HandPhone, v.BusinessEmail, v.Status,
                 de.DepartmentId
-            FROM Employees e
-            LEFT JOIN H0_DepartmentEmployee de ON e.UserId = de.UserId
-            WHERE e.UserName = @Username AND e.Status > 0";
+            FROM View_H0_DepartmentEmployee v
+            LEFT JOIN H0_DepartmentEmployee de ON v.UserId = de.UserId
+            WHERE v.UserName = @Username AND v.Status = 1 ";
 
         using var conn = CreateConnection();
         var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { Username = username });
@@ -109,13 +116,13 @@ public class PhoneBookRepository : IPhoneBookRepository
     {
         const string sql = @"
             SELECT 
-                e.UserId, e.UserName, e.EmployeeCode, e.FullName, 
-                e.PositionName,
-                e.WorkingPhone, e.HandPhone, e.HomePhone, e.Status,
+                v.UserId, v.UserName, v.EmployeeCode, v.FullName, 
+                v.Password, v.PositionName,
+                v.WorkingPhone, v.HandPhone, v.BusinessEmail, v.Status,
                 de.DepartmentId
-            FROM Employees e
-            LEFT JOIN H0_DepartmentEmployee de ON e.UserId = de.UserId
-            WHERE e.UserId = @UserId AND e.Status > 0";
+            FROM View_H0_DepartmentEmployee v
+            LEFT JOIN H0_DepartmentEmployee de ON v.UserId = de.UserId
+            WHERE v.UserId = @UserId AND v.Status =1 ";
 
         using var conn = CreateConnection();
         var employee = await conn.QueryFirstOrDefaultAsync<Employee>(sql, new { UserId = userId });

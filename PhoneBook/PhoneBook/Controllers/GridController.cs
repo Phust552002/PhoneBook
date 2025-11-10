@@ -34,7 +34,7 @@ namespace PhoneBook.Controllers
                 e.UserName,
                 e.WorkingPhone,
                 e.HandPhone,
-                e.HomePhone
+                e.BusinessEmail
             });
 
             return Json(result.ToDataSourceResult(request));

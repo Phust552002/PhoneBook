@@ -123,8 +123,8 @@
   <data name="Column_FullName" xml:space="preserve">
     <value>FullName</value>
   </data>
-  <data name="Column_HomePhone" xml:space="preserve">
-    <value>Home Phone</value>
+  <data name="Column_BusinessEmail" xml:space="preserve">
+    <value>Business Email</value>
   </data>
   <data name="Column_Mobile" xml:space="preserve">
     <value>Mobile Phone</value>

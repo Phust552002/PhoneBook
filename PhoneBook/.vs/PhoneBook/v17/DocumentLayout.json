@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\project_readme.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\project_readme.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\controllers\\gridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\controllers\\gridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\phonebook.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\phonebook.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\repositories\\phonebookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,6 +33,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\models\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\models\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\resources\\views\\home\\index.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\resources\\views\\home\\index.en.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\phonebook.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|solutionrelative:phonebook\\phonebook.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497BF7AA-3CC0-49EF-BB2D-CFB0F14CE78B}|PhoneBook\\PhoneBook.csproj|c:\\users\\admin\\documents\\github\\phonebook\\phonebook\\phonebook\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,17 +70,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Controllers\\HomeController.cs",
               "RelativeToolTip": "PhoneBook\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwCkAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwFgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T06:56:17.144Z",
               "IsPinned": true,
@@ -88,13 +88,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "PhoneBook\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "PhoneBook\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAHcBAAAAAAAAAAAAAEUBAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAuwGIBAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-10T06:24:36.281Z",
               "IsPinned": true,
@@ -103,58 +103,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Project_Readme.html",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Project_Readme.html",
-              "RelativeDocumentMoniker": "PhoneBook\\Project_Readme.html",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Project_Readme.html",
-              "RelativeToolTip": "PhoneBook\\Project_Readme.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-10T07:05:15.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "PhoneBook\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Properties\\launchSettings.json",
-              "RelativeToolTip": "PhoneBook\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-10T05:26:24.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Program.cs",
-              "RelativeDocumentMoniker": "PhoneBook\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Program.cs",
-              "RelativeToolTip": "PhoneBook\\Program.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAuwG8AAAAKAAAAAAAAAA==",
+              "Title": "GridController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Controllers\\GridController.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Controllers\\GridController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Controllers\\GridController.cs",
+              "RelativeToolTip": "PhoneBook\\Controllers\\GridController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T06:20:49.66Z",
+              "WhenOpened": "2025-11-10T10:25:04.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "serviceDependencies.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Properties\\serviceDependencies.json",
-              "RelativeDocumentMoniker": "PhoneBook\\Properties\\serviceDependencies.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Properties\\serviceDependencies.json",
-              "RelativeToolTip": "PhoneBook\\Properties\\serviceDependencies.json",
+              "DocumentIndex": 8,
+              "Title": "PhoneBook.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\PhoneBook.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Models\\PhoneBook.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\PhoneBook.cs",
+              "RelativeToolTip": "PhoneBook\\Models\\PhoneBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-10T06:36:22.777Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T09:10:37.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
+              "Title": "Index.en.resx",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Resources\\Views\\Home\\Index.en.resx",
+              "RelativeDocumentMoniker": "PhoneBook\\Resources\\Views\\Home\\Index.en.resx",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Resources\\Views\\Home\\Index.en.resx",
+              "RelativeToolTip": "PhoneBook\\Resources\\Views\\Home\\Index.en.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-10T08:48:42.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "PhoneBook",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\PhoneBook.csproj",
               "RelativeDocumentMoniker": "PhoneBook\\PhoneBook.csproj",
@@ -166,7 +152,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Program.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Program.cs",
+              "RelativeToolTip": "PhoneBook\\Program.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAuwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T06:20:49.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPhoneBookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\IPhoneBookRepository.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Repositories\\IPhoneBookRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\IPhoneBookRepository.cs",
+              "RelativeToolTip": "PhoneBook\\Repositories\\IPhoneBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T09:10:39.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PhoneBookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\PhoneBookRepository.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Repositories\\PhoneBookRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\PhoneBookRepository.cs",
+              "RelativeToolTip": "PhoneBook\\Repositories\\PhoneBookRepository.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwHwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T08:30:45.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "web.config",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\web.config",
               "RelativeDocumentMoniker": "PhoneBook\\web.config",
@@ -179,54 +204,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IPhoneBookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\IPhoneBookRepository.cs",
-              "RelativeDocumentMoniker": "PhoneBook\\Repositories\\IPhoneBookRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\IPhoneBookRepository.cs",
-              "RelativeToolTip": "PhoneBook\\Repositories\\IPhoneBookRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T08:30:35.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PhoneBookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\PhoneBookRepository.cs",
-              "RelativeDocumentMoniker": "PhoneBook\\Repositories\\PhoneBookRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Repositories\\PhoneBookRepository.cs",
-              "RelativeToolTip": "PhoneBook\\Repositories\\PhoneBookRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T08:30:45.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "PhoneBook\\Models\\Department.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Department.cs",
-              "RelativeToolTip": "PhoneBook\\Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T12:26:56.486Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "PhoneBook\\Models\\Employee.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Employee.cs",
               "RelativeToolTip": "PhoneBook\\Models\\Employee.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwCQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T12:27:04.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "PhoneBook\\Models\\Department.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\PhoneBook\\PhoneBook\\PhoneBook\\Models\\Department.cs",
+              "RelativeToolTip": "PhoneBook\\Models\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T12:26:56.486Z",
               "EditorCaption": ""
             },
             {
@@ -239,8 +238,7 @@
               "RelativeToolTip": "PhoneBook\\Services\\AuthService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAmwEYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T10:30:57.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T10:30:57.557Z"
             },
             {
               "$type": "Document",
@@ -264,8 +262,7 @@
               "RelativeToolTip": "PhoneBook\\Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:35:11.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:35:11.985Z"
             }
           ]
         }

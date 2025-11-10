@@ -123,8 +123,8 @@
   <data name="Column_FullName" xml:space="preserve">
     <value>Họ và Tên</value>
   </data>
-  <data name="Column_HomePhone" xml:space="preserve">
-    <value>ĐT Nhà</value>
+  <data name="Column_BusinessEmail" xml:space="preserve">
+    <value>Email Công ty</value>
   </data>
   <data name="Column_Mobile" xml:space="preserve">
     <value>Di Động</value>
@@ -133,7 +133,7 @@
     <value>STT</value>
   </data>
   <data name="Column_WorkPhone" xml:space="preserve">
-    <value>ĐT Công Việc</value>
+    <value>SĐT Làm việc</value>
   </data>
   <data name="DepartmentTitle" xml:space="preserve">
     <value>Phòng Ban</value>
