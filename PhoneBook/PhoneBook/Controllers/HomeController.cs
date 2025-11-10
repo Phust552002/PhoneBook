@@ -24,7 +24,6 @@ namespace PhoneBook.Controllers
             _repo = repo;
         }
 
-        // Trang chính
         public async Task<IActionResult> Index()
         {
             var fullName = User.FindFirst("FullName")?.Value ?? User.Identity.Name;
@@ -36,7 +35,7 @@ namespace PhoneBook.Controllers
             return View(departments);
         }
 
-        // API lấy danh sách nhân viên theo phòng ban
+        // lấy danh sách nhân viên theo phòng ban
         [HttpGet]
         public async Task<IActionResult> GetEmployees(int departmentId)
         {
@@ -93,7 +92,6 @@ namespace PhoneBook.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi GetAllEmployees: " + ex.Message);
                 return StatusCode(500, "Lỗi khi lấy danh sách nhân viên.");
             }
         }
@@ -102,7 +100,7 @@ namespace PhoneBook.Controllers
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddMinutes(5)}
             );
             return LocalRedirect(returnUrl);
         }

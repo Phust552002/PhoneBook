@@ -53,7 +53,7 @@
 
         /* Logo trong navbar */
         .navbar-logo {
-            height: 45px;
+            height: 50px;
             width: auto;
             max-width: 150px;
             object-fit: contain;
@@ -209,23 +209,23 @@
         <nav class="navbar navbar-custom navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                    <img src="~/images/logoSags.png" alt="Company Logo" class="navbar-logo"
+                    <img src="~/images/sagsLogo.png" alt="Company Logo" class="navbar-logo"
                          onerror="this.style.display='none'; document.getElementById('navbarTextFallback').style.display='flex';" />
 
 
-                    <!-- Fallback nếu không có logo -->
+                    <!-- Fallback -->
                     <div id="navbarTextFallback" style="display: none; align-items: center; gap: 10px;">
                         <span class="navbar-brand-icon">📱</span>
                         <h1 class="navbar-brand-text">PhoneBook</h1>
                     </div>
 
-                    <!-- Hoặc hiển thị cả logo và text -->
+                    <!-- logo và text -->
                     <h1 class="navbar-brand-text">PHONEBOOK</h1>
                 </a>
 
                 <div class="d-flex align-items-center ms-auto">
                     <div class="user-info me-2">
-                        <div class="user-name">👤 @User.FindFirst("FullName")?.Value</div>
+                        <div class="user-name">@User.FindFirst("FullName")?.Value</div>
                         <div class="user-position">@User.FindFirst("PositionName")?.Value</div>
                     </div>
 
@@ -248,7 +248,7 @@
     <script>
         // Lưu cookie culture + reload
         function setLanguage(lang) {
-            // Gán culture + UICulture vào cookie (chuẩn ASP.NET)
+            // Gán culture + UICulture vào cookie
             document.cookie = `.AspNetCore.Culture=c=${lang}|uic=${lang}; path=/;`;
             location.reload();
         }

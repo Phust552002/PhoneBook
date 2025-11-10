@@ -67,7 +67,7 @@ var localizationOptions = new RequestLocalizationOptions()
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
-// Cho phép đọc culture từ cookie "culture"
+// Cho phép đọc culture từ cookie 
 localizationOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider
 {
     CookieName = "culture"

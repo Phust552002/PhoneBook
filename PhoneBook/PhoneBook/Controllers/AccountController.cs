@@ -11,12 +11,10 @@ namespace PhoneBook.Controllers
     public class AccountController : Controller
     {
         private readonly IAuthService _authService;
-        private readonly IPhoneBookRepository _repository;
 
-        public AccountController(IAuthService authService, IPhoneBookRepository repository)
+        public AccountController(IAuthService authService)
         {
             _authService = authService;
-            _repository = repository;
         }
 
         [HttpGet]
@@ -65,7 +63,7 @@ namespace PhoneBook.Controllers
             var authProperties = new AuthenticationProperties
             {
                 IsPersistent = model.RememberMe,
-                ExpiresUtc = model.RememberMe ? DateTimeOffset.UtcNow.AddDays(30) : DateTimeOffset.UtcNow.AddHours(8)
+                ExpiresUtc = model.RememberMe ? DateTimeOffset.UtcNow.AddDays(1) : DateTimeOffset.UtcNow.AddHours(1)
             };
 
             await HttpContext.SignInAsync(

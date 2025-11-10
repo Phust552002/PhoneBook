@@ -8,12 +8,10 @@ namespace PhoneBook.Services
     public class AuthService : IAuthService
     {
         private readonly IPhoneBookRepository _repo;
-
         public AuthService(IPhoneBookRepository repo)
         {
             _repo = repo;
         }
-
         public async Task<Employee> AuthenticateAsync(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
@@ -27,7 +25,6 @@ namespace PhoneBook.Services
             {
                 return null;
             }
-
             bool isPasswordValid = false;
 
             // Trường hợp 1: Password đã được hash

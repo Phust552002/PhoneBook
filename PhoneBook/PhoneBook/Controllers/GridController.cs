@@ -48,12 +48,6 @@ namespace PhoneBook.Controllers
         {
             try
             {
-                // Kiểm tra null/empty
-                if (string.IsNullOrEmpty(base64))
-                {
-                    return BadRequest("No PDF data received");
-                }
-
                 // Thử decode base64
                 byte[] fileContents;
                 try

@@ -59,6 +59,7 @@ wwwroot\fonts\Roboto\static\Roboto_SemiCondensed-Thin.ttf
 wwwroot\fonts\Roboto\static\Roboto_SemiCondensed-ThinItalic.ttf
 wwwroot\images\backgroundSags.jpg
 wwwroot\images\logoSags.png
+wwwroot\images\sagsLogo.png
 wwwroot\lib\bootstrap\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\css\bootstrap-grid.min.css

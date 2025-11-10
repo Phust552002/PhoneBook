@@ -231,11 +231,11 @@
         }
     </style>
 
-    <!-- ===================== MAIN UI ===================== -->
+    <!-- ===================== MAIN VIEW ===================== -->
     <div class="phonebook-container">
         <div class="row h-100">
 
-            <!-- TREEVIEW -->
+            <!-- DEPARTMENTS TREEVIEW -->
             <div class="col-lg-3 col-md-4 h-100">
                 <div class="section-card">
                     <div class="section-header">
@@ -297,8 +297,8 @@
                                             .PaperSize("A4")
                                             .Scale(0.8)
                                             .Margin("2cm", "1cm", "1cm", "1cm")
-                                            .Landscape()
-                                            .TemplateId("page-template")
+@*                                            // Portrait(Default)
+ *@                                         .TemplateId("page-template")
                                             .FileName("PhoneBook.pdf")
                                             .ProxyURL(Url.Action("Pdf_Export_Save", "Grid"))
                                             .ForceProxy(true)
@@ -388,7 +388,7 @@
                 $(window).on("resize", adjustGridHeight);
             });
 
-            function adjustGridHeight() {
+            function adjustGridHeight() {          // Modify Table heigth when scroll and load data
                 const gridWrapper = $(".grid-wrapper");
                 const grid = $("#employeeGrid").data("kendoGrid");
                 if (!grid) return;
@@ -411,7 +411,7 @@
                 adjustGridHeight();
             }
 
-            function updateEmployeeCount(count) {
+            function updateEmployeeCount(count) { 
                 $("#empCount").html(`<i class="fas fa-user-check me-2"></i>@Localizer["TotalEmployees"] <strong>${count}</strong>`);
             }
 
@@ -460,7 +460,6 @@
                     $("#filterText").on("input", () => applyFilter(t, $("#filterText").val()));
                 });
             })();
-        console.log("ProxyURL:", "@Url.Action("Pdf_Export_Save", "Grid")");
 
         </script>
     }
