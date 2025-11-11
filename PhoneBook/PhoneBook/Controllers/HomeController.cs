@@ -38,7 +38,7 @@ namespace PhoneBook.Controllers
             return View(departments);
         }
 
-        // lấy danh sách nhân viên theo phòng ban
+        //lấy danh sách nhân viên theo phòng ban
         [HttpGet]
         public async Task<IActionResult> GetEmployees(int departmentId)
         {
@@ -92,7 +92,7 @@ namespace PhoneBook.Controllers
                 var employees = await _repo.GetAllEmployeesAsync();
                 return Json(employees);
         }
-        // Lấy nhân viên đã nghỉ việc
+        //Lấy nhân viên đã nghỉ việc
         [HttpGet]
         public async Task<IActionResult> GetAllInactiveEmployees()
         {

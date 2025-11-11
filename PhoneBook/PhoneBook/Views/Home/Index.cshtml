@@ -1,7 +1,7 @@
 ﻿@model List<PhoneBook.Models.Department>
 @using Kendo.Mvc
 @{
-    ViewData["Title"] = "PhoneBook";
+    ViewData["Title"] = "Danh bạ nội bộ";
     var isAdmin = ViewBag.IsAdmin ?? false;
 }
 
@@ -116,8 +116,8 @@
 
     /* ====== EMPLOYEE COUNT ====== */
     .employee-count {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        background:  linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
+        color: #444;
         padding: 6px 12px;
         border-radius: 4px;
         text-align: center;
@@ -309,8 +309,8 @@
     }
 
     .k-window.k-grid-edit-form .k-window-titlebar {
-        background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
-        color: white;
+        background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
+        color: #444;
         border-radius: 8px 8px 0 0;
         padding: 15px 20px;
     }
@@ -361,7 +361,7 @@
         background: #2196F3;
         border-color: #2196F3;
         color: white;
-        padding: 8px 20px;
+        padding: 8px 20px;linear
         font-weight: 600;
     }
 
@@ -388,8 +388,8 @@
         justify-content: center;      
         align-items: center;
         text-align: center;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #fff;
+        background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
+        color: #000000;
         font-weight: 600;
         font-size: 16px;
         border-radius: 0px 0px 0 0;
@@ -410,7 +410,7 @@
         text-align: center;
         font-weight: 700;
         font-size: 16px;
-        color: #fff;
+        color: #444;
     }
 
     .k-grid .k-grid-content-locked {
@@ -532,7 +532,7 @@
                                 columns.Template("<span class='row-number'></span>")
                                     .Title(@Localizer["Column_STT"].Value)
                                     .Width(60)
-                                    .HtmlAttributes(new { @class = "text-center", data_field = "stt" });
+                                    .HtmlAttributes(new { data_field = "stt" });
 
                                 columns.Bound(e => e.FullName)
                                     .Title(@Localizer["Column_FullName"].Value)
@@ -542,17 +542,17 @@
                                 columns.Bound(e => e.WorkingPhone)
                                     .Title(@Localizer["Column_WorkPhone"].Value)
                                     .Width(200)
-                                    .HtmlAttributes(new { @class = "text-center", data_field = "workingphone" });
+                                    .HtmlAttributes(new { data_field = "workingphone" });
 
                                 columns.Bound(e => e.HandPhone)
                                     .Title(@Localizer["Column_Mobile"].Value)
                                     .Width(240)
-                                    .HtmlAttributes(new { @class = "text-center", data_field = "handphone" });
+                                    .HtmlAttributes(new { data_field = "handphone" });
 
                                 columns.Bound(e => e.BusinessEmail)
                                     .Title(@Localizer["Column_BusinessEmail"].Value)
                                     .Width(240)
-                                    .HtmlAttributes(new { @class = "text-center", data_field = "businessemail" });
+                                    .HtmlAttributes(new { data_field = "businessemail" });
 
                                 if (isAdmin)
                                 {
@@ -594,7 +594,7 @@
                         .DataSource(ds => ds
                             .Ajax()
                             .ServerOperation(false)
-                            .PageSize(10)
+                            .PageSize(20)
                             .Model(m => m.Id(e => e.UserId))
                             .Read(read => read.Action("GetAllEmployees", "Home").Type(HttpVerbs.Get))
                             .Update(update => update.Action("UpdateEmployee", "Home").Type(HttpVerbs.Post))

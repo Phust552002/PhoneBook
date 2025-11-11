@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PhoneBook</title>
+    <link rel="icon" type="image/svg+xml" href="~/images/logoSagsnoWord.ico" />
+    <title>SAGS::PHONEBOOK</title>
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
 @*         <link rel="stylesheet" href="~/lib/kendo/css/kendo.common.min.css" />
@@ -31,7 +32,7 @@
 
     <style>
         .navbar-custom {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #caf0f8 0%, #ade8f4 100%);
             padding: 0.3rem 1rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
@@ -39,7 +40,7 @@
         .navbar-brand {
             display: flex;
             align-items: flex-end;
-            gap: 20px;
+            gap: 50px;
             padding-top: 4px;
         }
         .navbar-logo {
@@ -50,9 +51,9 @@
             transform-origin: left center;
         }
         .navbar-brand-text {
-            color: white;
+            color: black;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 2px;
         }
 
@@ -71,7 +72,7 @@
             transform-origin: left center;
         }
         .user-info {
-            color: white;
+            color: black;
             text-align: right;
         }
 
@@ -110,7 +111,7 @@
         }
 
         .btn-lang {
-            color: white;
+            color: black;
             background: transparent;
             font-weight: 600;
             padding: 5px 14px;
@@ -121,6 +122,13 @@
             .btn-lang.active {
                 background: rgba(255, 255, 255, 0.9);
                 color: #764ba2;
+            }
+
+            .btn-lang.active:hover {
+                background: rgba(200, 255, 255, 0.9);
+                color: #444;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             }
         @@media (max-width: 992px) {
             .user-info

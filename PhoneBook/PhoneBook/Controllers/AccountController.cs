@@ -11,7 +11,6 @@ namespace PhoneBook.Controllers
     public class AccountController : Controller
     {
         private readonly IAuthService _authService;
-
         public AccountController(IAuthService authService)
         {
             _authService = authService;
@@ -50,7 +49,6 @@ namespace PhoneBook.Controllers
             var employeeRole = await _authService.GetUserRolesAsync(employee.UserId);
             var adminRoleIds = new[] {1,2,4,8,10,20}; // Các RoleId có quyền truy cập hệ thống
             bool isAdmin = employeeRole.Any(roleId => adminRoleIds.Contains(roleId));
-            // Tạo claims
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, employee.UserId.ToString()),
@@ -81,10 +79,8 @@ namespace PhoneBook.Controllers
             {
                 return Redirect(returnUrl);
             }
-
             return RedirectToAction("Index", "Home");
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -92,7 +88,6 @@ namespace PhoneBook.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
-
         [HttpGet]
         public IActionResult AccessDenied()
         {

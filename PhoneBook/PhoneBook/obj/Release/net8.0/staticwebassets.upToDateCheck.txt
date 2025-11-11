@@ -1298,3 +1298,4 @@ wwwroot\lib\kendo\js\messages\kendo.messages.vi-VN.min.js
 wwwroot\lib\kendo\js\messages\kendo.messages.zh-CN.min.js
 wwwroot\lib\kendo\js\messages\kendo.messages.zh-HK.min.js
 wwwroot\lib\kendo\js\messages\kendo.messages.zh-TW.min.js
+wwwroot\images\logoSagsnoWord.png

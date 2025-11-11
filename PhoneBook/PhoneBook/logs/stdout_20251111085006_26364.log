@@ -1,0 +1,44 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[63]
+      User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/ - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed. These requirements were not met:
+      DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[12]
+      AuthenticationScheme: Cookies was challenged.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Account/Login?ReturnUrl=%2F - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/ - 302 - - 120.4548ms
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.AccountController.Login (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller PhoneBook.Controllers.AccountController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 51.4345ms.
+info

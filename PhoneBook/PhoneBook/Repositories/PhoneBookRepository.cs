@@ -44,7 +44,7 @@ public class PhoneBookRepository : IPhoneBookRepository
         return roots;
     }
 
-    // 🔹 Lấy nhân viên theo phòng ban
+    //Lấy nhân viên theo phòng ban
     public async Task<List<Employee>> GetEmployeesByDepartmentAsync(int departmentId)
     {
         const string sql = @"

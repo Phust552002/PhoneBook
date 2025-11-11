@@ -22,13 +22,13 @@ namespace PhoneBook.Controllers
             return View(); 
         }
 
-        // Lấy dữ liệu cho Kendo Grid PDF Export
+        //  dữ liệu cho  Grid PDF Export
         [HttpPost]
         public async Task<IActionResult> Pdf_Export_Read([DataSourceRequest] Kendo.Mvc.UI.DataSourceRequest request)
         {
             var employees = await _repo.GetAllEmployeesAsync();
 
-            // Chọn các trường cần hiển thị trong PDF
+            // các trường cần hiển thị trong PDF
             var result = employees.Select(e => new
             {
                 e.UserName,
@@ -48,7 +48,7 @@ namespace PhoneBook.Controllers
         {
             try
             {
-                // Thử decode base64
+                // decode base64
                 byte[] fileContents;
                 try
                 {

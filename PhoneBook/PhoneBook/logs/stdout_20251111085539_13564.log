@@ -1,0 +1,180 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[63]
+      User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBook
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/ - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.Index (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 156.9476ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.Index (PhoneBook) in 358.8751ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.Index (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/lib/jszip/jszip.min.js - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/ - 200 - text/html;+charset=utf-8 486.7649ms
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/lib/jszip/jszip.min.js - 404 - - 8.2789ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44364/lib/jszip/jszip.min.js, Response status code: 404
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/_framework/aspnetcore-browser-refresh.js - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript;+charset=utf-8 2.7951ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/_vs/browserLink - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 18.5665ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetDepartments - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetDepartments (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetDepartments", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDepartments() on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PhoneBook.Models.Department, PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType2`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetAllEmployees?sort=&group=&filter= - - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.GetDepartments (PhoneBook) in 20.8243ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.GetDepartments (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/Home/GetDepartments - 200 - application/json;+charset=utf-8 33.9274ms
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetAllEmployees (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAllEmployees", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[PhoneBook.Models.Employee, PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.GetAllEmployees (PhoneBook) in 54.963ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.GetAllEmployees (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/Home/GetAllEmployees?sort=&group=&filter= - 200 - application/json;+charset=utf-8 74.6219ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetEmployeesByDepartment", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployeesByDepartment(Int32) on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[PhoneBook.Models.Employee, PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - - -
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook) in 56.3052ms
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - 200 - application/json;+charset=utf-8 71.4822ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetEmployeesByDepartment", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployeesByDepartment(Int32) on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[PhoneBook.Models.Employee, PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook) in 29.5571ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - 200 - application/json;+charset=utf-8 45.4782ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetEmployeesByDepartment", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployeesByDepartment(Int32) on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[PhoneBook.Models.Employee, PhoneBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook) in 31.8027ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'PhoneBook.Controllers.HomeController.GetEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 GET https://localhost:44364/Home/GetEmployeesByDepartment?departmentId=0 - 200 - application/json;+charset=utf-8 41.1295ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 GET https://localhost:44364/Home/GetInactiveEmployeesByDepartment?departmentId=0 - - -
+warn: Microsoft.AspNetCore.Session.SessionMiddleware[7]
+      Error unprotecting the session cookie.
+      System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+         at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+         at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+         at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'PhoneBook.Controllers.HomeController.GetInactiveEmployeesByDepartment (PhoneBook)'
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetInactiveEmployeesByDepartment", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetInactiveEmployeesByDepartment(Int32) on controller PhoneBook.Controllers.HomeController (PhoneBook).
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'System.Collecti
