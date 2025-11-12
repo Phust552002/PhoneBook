@@ -32,7 +32,7 @@
 
     <style>
         .navbar-custom {
-            background: linear-gradient(135deg, #caf0f8 0%, #ade8f4 100%);
+            background: #2196F3; 
             padding: 0.3rem 1rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
@@ -43,6 +43,7 @@
             gap: 50px;
             padding-top: 4px;
         }
+
         .navbar-logo {
             height: 40px;
             width: auto;
@@ -50,8 +51,9 @@
             transform: scale(1.25);
             transform-origin: left center;
         }
+
         .navbar-brand-text {
-            color: black;
+            color: #ffffff;
             font-weight: 700;
             font-size: 24px;
             margin-bottom: 2px;
@@ -64,31 +66,27 @@
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
-        .navbar-logo {
-            height: 40px; 
-            width: auto;
-            max-width: 150px;
-            transform: scale(1.25); 
-            transform-origin: left center;
-        }
+
         .user-info {
-            color: black;
+            color: #ffffff;
             text-align: right;
         }
 
         .user-name {
             font-weight: 600;
             font-size: 15px;
+            color: #ffffff;
         }
 
         .user-position {
             font-size: 12px;
             opacity: 0.9;
+            color: #ffffff;
         }
 
         .btn-logout {
             background-color: rgba(255, 255, 255, 0.95);
-            color: #764ba2;
+            color: #2196F3;
             border: none;
             padding: 8px 20px;
             border-radius: 6px;
@@ -99,37 +97,47 @@
 
             .btn-logout:hover {
                 background-color: #fff;
-                color: #667eea;
+                color: #1976D2; 
                 transform: translateY(-2px);
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             }
 
         .lang-toggle {
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.4); 
             border-radius: 8px;
             overflow: hidden;
         }
 
         .btn-lang {
-            color: black;
-            background: transparent;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%); 
             font-weight: 600;
-            padding: 5px 14px;
-            border: none;
+            padding: 6px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.25); 
+            border-radius: 0; 
             transition: all 0.3s ease;
         }
 
-            .btn-lang.active {
-                background: rgba(255, 255, 255, 0.9);
-                color: #764ba2;
+            .btn-lang:not(.active):hover {
+                background: linear-gradient(135deg, #1E88E5 0%, #1976D2 100%);
+                color: #fff;
+                transform: translateY(-1px);
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
             }
 
-            .btn-lang.active:hover {
-                background: rgba(200, 255, 255, 0.9);
-                color: #444;
-                transform: translateY(-2px);
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            .btn-lang.active {
+                background: linear-gradient(135deg, #42A5F5 0%, #2196F3 100%);
+                color: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.5); 
             }
+
+                .btn-lang.active:hover {
+                    background: linear-gradient(135deg, #64B5F6 0%, #1E88E5 100%);
+                    color: #fff;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    transform: translateY(-2px);
+                }
+
         @@media (max-width: 992px) {
             .user-info
 

@@ -10,6 +10,53 @@
 <meta charset="utf-8" />
 
 <style>
+    /* ====== OVERRIDE KENDO CSS VARIABLES ====== */
+    :root {
+        --kendo-color-primary: #2196F3;
+        --kendo-color-primary-hover: #1976D2;
+        --kendo-color-primary-active: #1565C0;
+        --kendo-color-on-primary: #ffffff;
+    }
+
+    /* Override trực tiếp cho nút Save */
+    .k-button-solid-primary,
+    .k-grid-update.k-button-solid-primary {
+        border-color: #2196F3 !important;
+        color: #fff !important;
+        background-color: #2196F3 !important;
+    }
+
+    .k-button-solid-primary:hover,
+    .k-grid-update.k-button-solid-primary:hover {
+        border-color: #1976D2 !important;
+        background-color: #1976D2 !important;
+    }
+
+    .k-button-solid-primary:active,
+    .k-grid-update.k-button-solid-primary:active {
+        border-color: #1565C0 !important;
+        background-color: #1565C0 !important;
+    }
+
+    /* Override cho nút Edit trong grid */
+    .k-grid .k-grid-edit.k-button {
+        color: #2196F3 !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+
+    .k-grid .k-grid-edit.k-button:hover {
+        color: #1976D2 !important;
+        background-color: #e3f2fd !important;
+    }
+
+    .k-grid .k-grid-edit .k-button-icon {
+        color: #2196F3 !important;
+    }
+
+    .k-grid .k-grid-edit:hover .k-button-icon {
+        color: #1976D2 !important;
+    }
     /* ====== BASE ====== */
     body {
         font-size: 13px;
@@ -116,8 +163,8 @@
 
     /* ====== EMPLOYEE COUNT ====== */
     .employee-count {
-        background:  linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
-        color: #444;
+        background: #2196F3 100%;
+        color: #fff;
         padding: 6px 12px;
         border-radius: 4px;
         text-align: center;
@@ -153,19 +200,62 @@
         #deptTree .k-in {
             padding: 4px 6px;
         }
+        #deptTree .k-selected > .k-in {
+            background-color: #2196F3 !important;
+            color: white !important;
+        }
 
     .k-grid {
-        border-radius: 4px;
-        overflow: hidden;
-        font-size: 12px;
-        flex: 1;
-        font-family: "DejaVu Sans", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
-    .k-grid-header {
-        padding-right: 0px !important;
+    .k-grid-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    /* FORCE SCROLLBAR LUÔN HIỂN THỊ */
+    .k-grid .k-grid-content.k-auto-scrollable {
+        overflow-y: scroll !important;
+        overflow-x: auto !important;
     }
 
+    /* Đảm bảo scrollbar luôn chiếm không gian */
+    .k-grid .k-grid-content.k-auto-scrollable::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 12px !important;
+        display: block !important;
+    }
+
+    .k-grid .k-grid-content.k-auto-scrollable::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, .3);
+        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+        min-height: 30px;
+    }
+
+    .k-grid .k-grid-content.k-auto-scrollable::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        display: block !important;
+    }
+
+    /* Firefox - Force scrollbar */
+    .k-grid .k-grid-content.k-auto-scrollable {
+        scrollbar-width: auto !important;
+        scrollbar-color: rgba(0, 0, 0, .3) #f1f1f1;
+    }
+
+    /* IE/Edge */
+    .k-grid .k-grid-content.k-auto-scrollable {
+        -ms-overflow-style: scrollbar !important;
+    }
+
+    .k-treeview .k-selected {
+    background-color: #2196F3 !important;
+    color: white !important;
+}
     .k-grid-header th {
         font-size: 12px;
         padding: 6px 8px;
@@ -309,8 +399,8 @@
     }
 
     .k-window.k-grid-edit-form .k-window-titlebar {
-        background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
-        color: #444;
+        background: #2196F3 100%;
+        color: #fff;
         border-radius: 8px 8px 0 0;
         padding: 15px 20px;
     }
@@ -329,14 +419,16 @@
         text-align: right;
         padding-right: 15px;
         font-weight: 600;
-        color: #495057;
+        color: #495057 ;
         font-size: 13px;
     }
 
     .k-window.k-grid-edit-form .k-edit-field {
         width: 65%;
     }
-
+    k-window-title{
+        color = #fff;
+    }
     .k-window.k-grid-edit-form .k-textbox {
         width: 100%;
         padding: 8px 12px;
@@ -388,8 +480,8 @@
         justify-content: center;      
         align-items: center;
         text-align: center;
-        background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
-        color: #000000;
+        background:#2196F3;
+        color: #fff;
         font-weight: 600;
         font-size: 16px;
         border-radius: 0px 0px 0 0;
@@ -410,7 +502,7 @@
         text-align: center;
         font-weight: 700;
         font-size: 16px;
-        color: #444;
+        color: #fff;
     }
 
     .k-grid .k-grid-content-locked {
@@ -438,6 +530,13 @@
             margin-bottom: 15px;
             height: auto;
         }
+    }
+    .k-grid .k-command-cell .k-grid-edit {
+        color: #2196F3;
+    }
+
+    .k-grid .k-command-cell .k-grid-edit:hover {
+        color: #1976D2;
     }
 </style>
 
@@ -565,6 +664,7 @@
                                 .Resizable(false);
                             }
                         })
+                        .Scrollable()
                         .Sortable()
                         .ColumnMenu(menu => menu
                             .Enabled(true)
@@ -577,10 +677,8 @@
                             .TemplateName("EmployeeEditTemplate")
                         )
                         .Pageable(page => page
-                            .PageSizes(new int[] { 10, 20, 30, 50, 100 })
                             .ButtonCount(5)
-@*                             .Refresh(true)
- *@                            .Messages(m => m
+                           .Messages(m => m
                                 .ItemsPerPage(@Localizer["ItemsPerPageMsg"].Value)
                                 .Display(@Localizer["DisplayMsg"].Value)
                                 .Empty(@Localizer["EmptyMsg"].Value)
@@ -594,12 +692,11 @@
                         .DataSource(ds => ds
                             .Ajax()
                             .ServerOperation(false)
-                            .PageSize(20)
+                            .PageSize(15)
                             .Model(m => m.Id(e => e.UserId))
                             .Read(read => read.Action("GetAllEmployees", "Home").Type(HttpVerbs.Get))
                             .Update(update => update.Action("UpdateEmployee", "Home").Type(HttpVerbs.Post))
                         )
-                        .Scrollable()
                         .Events(e => e
                             .DataBound("onGridDataBound")
                             .Save("onGridSave")

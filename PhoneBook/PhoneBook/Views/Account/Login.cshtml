@@ -61,7 +61,7 @@
             }
 
             body.no-background::before {
-                background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
+                background: linear-gradient(135deg, #BBDEFB 0%, #2196F3 100%);
             }
 
         .login-container {
@@ -91,8 +91,8 @@
         }
 
         .login-header {
-            background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
-            color: #444;
+            background: #2196F3 100%;
+            color: #fff;
             padding: 40px 30px;
             text-align: center;
             position: relative;
@@ -198,13 +198,13 @@
         }
 
             .form-control:focus {
-                border-color: #667eea;
+                border-color: #2196F3 ;
                 box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
                 outline: none;
             }
 
             .form-control:hover {
-                border-color: #764ba2;
+                border-color: #2196F3;
             }
 
         .password-input-wrapper {
@@ -245,8 +245,8 @@
         }
 
             .form-check-input:checked {
-                background-color: #667eea;
-                border-color: #667eea;
+                background-color: #2196F3;
+                border-color: #2196F3 ;
             }
 
         .form-check-label {
@@ -257,19 +257,23 @@
         }
 
         .btn-login {
-            background: linear-gradient(135deg, #b8e0d2 0%, #95e1d3 100%);
+            background:  #2196F3 100%;
             border: none;
             border-radius: 10px;
             padding: 14px;
             font-weight: 700;
             width: 100%;
             margin-top: 10px;
-            color: #444;
+            color: #fff;
             font-size: 16px;
             letter-spacing: 0.5px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
             .btn-login::before {
@@ -339,12 +343,8 @@
             .btn-login.loading::after {
                 content: '';
                 position: absolute;
-                width: 20px;
-                height: 20px;
-                top: 50%;
-                left: 50%;
-                margin-left: -10px;
-                margin-top: -10px;
+                width: 22px;
+                height: 22px;
                 border: 3px solid rgba(255,255,255,0.3);
                 border-top-color: white;
                 border-radius: 50%;
@@ -442,7 +442,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-login" id="btnLogin">
-                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                    <i class="fas fa-sign-in-alt"></i>   Đăng nhập
                 </button>
             </form>
         </div>
