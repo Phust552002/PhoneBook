@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
-<Project>
-  <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\Admin\Documents\GitHub\PhoneBook\PhoneBook\PhoneBookDbNormalized\bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2025-11-12T04:47:50.9833674Z||;True|2025-11-12T11:43:21.4129483+07:00||;True|2025-11-12T11:30:48.3085209+07:00||;True|2025-11-12T11:30:02.9905598+07:00||;True|2025-11-12T11:18:53.1954395+07:00||;True|2025-11-12T11:16:03.3577822+07:00||;True|2025-11-12T11:04:31.6175461+07:00||;True|2025-11-12T11:02:46.1906375+07:00||;True|2025-11-12T10:59:10.9629425+07:00||;True|2025-11-12T10:54:14.1875779+07:00||;True|2025-11-12T10:52:31.1195423+07:00||;True|2025-11-12T10:46:13.6539542+07:00||;True|2025-11-12T10:36:17.7545173+07:00||;True|2025-11-12T10:30:14.0539416+07:00||;</History>
-    <LastFailureDetails />
-  </PropertyGroup>
-</Project>
