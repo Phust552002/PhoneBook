@@ -1,6 +1,6 @@
 ﻿#nullable enable
 using System.ComponentModel.DataAnnotations;
-
+using Microsoft.Extensions.Localization;
 namespace PhoneBook.Models
 {
     public class Employee

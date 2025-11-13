@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Resources\Controllers\" />
+    <Folder Include="Resources\Models\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\fonts\" />
